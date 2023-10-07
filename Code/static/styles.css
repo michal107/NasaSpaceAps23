@@ -138,3 +138,28 @@
     padding: 0.5vw;
     text-align: center;
   }
+
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* optional, depending on the layout you want */
+  }
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+    text-align: center;
+  }
+  
+  table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* optional, depending on the layout you want */
+  }
+  
+  .col {
+    padding: 0.5vw;
+    text-align: center;
+  }

@@ -1,46 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="../../static/styles.css">
-    <link rel="stylesheet" type="text/css" href="../../static/planets.css">
-    <meta charset="UTF-8">
-    <title>Home</title>
+  <link rel="stylesheet" type="text/css" href="../../static/planets.css">
+  <script src="script.js"></script>
+  <meta charset="UTF-8">
+  <title>Scorpio Trips</title>
 </head>
-<!-- style="background-image: url('../../static/planet_background/mercury.jpg');" -->
 <body>
-    <video autoplay muted loop id="myVideo">
-        <source src="../../static/planet_background/venus.mp4" type="video/mp4">
-      </video>
-    <div id="topnav" class="topnav" style="position: fixed;">
-        <a href="/">HOME</a>
-        <a class="active" href="/go_bestsellers">BESTSELLERS</a>
-        <a href="/go_recomend">OUR RECOMENDATIONS</a>
-        <a href="/go_discover">DISCOVER</a>
-        <a href="/go_blog">BLOG</a>
-        <a href= "/go_insurance">INSURANCE</a>
-        <a href= "/go_travel_law">TRAVEL LAW</a>
-        <a href= "/go_conditions">CONDITIONS</a>
-        <a href="/go_about">ABOUT US</a>
-        <a img href="/go_login"><img style="width:40px;"src="../static/login_icon.png"></a>
+  <video autoplay muted loop id="myVideo">
+    <source src="../../static/planet_background/venus.mp4" type="video/mp4">
+  </video>
+</main>
+<div id="topnav" class="topnav" style="position: fixed;">
+  <a href="/">HOME</a>
+  <a href="/go_bestsellers">BESTSELLERS</a>
+  <a href="/go_recomend">OUR RECOMENDATIONS</a>
+  <a href="/go_discover">DISCOVER</a>
+  <a href="/go_blog">BLOG</a>
+  <a href= "/go_insurance">INSURANCE</a>
+  <a href= "/go_travel_law">TRAVEL LAW</a>
+  <a href= "/go_conditions">CONDITIONS</a>
+  <a href="/go_about">ABOUT US</a>
+  <a class="active" img href="/go_login"><img style="width:40px;"src="../static/login_icon.png"></a>
+</div>
+<div class="container">
+  <div class="content">
+    <h1>VENUS</h1>
+    <h3>LET'S GET HOT TOGETHER!</h3>
+    <div class="row">
+      <div class="col">
+        <a href="www.google.com"><img src="../../static/ofer1_icon.png" style="width: 40px;"></a><br>
+        <figurecaption>Trip to C13</figurecaption>
+      </div>
+      <div class="col">
+        <a href="www.google.com"><img src="../../static/ofer2_icon.png" style="width: 40px;"></a><br>
+        <figurecaption>Trip to hell</figurecaption>
+      </div>
     </div>
     
-    <div class="information" style="padding-left:16px; position: fixed; top: 80px;">
-        <h1>MERCURY</h1>
-        <div class="container">
-            <div class="content">
-                <h1>DISCOVER MERCURY WITH US!</h1>
-                <div class="row">
-                    <div class="col">
-                        <a img href=www.google.com><img src="../../static/offer1_icon.jpg"></a>
-                    </div>
-                    <div class="col">
-                        <a img href=www.google.com><img src="../../static/offer2_icon.jpg"></a>
-                    </div>
-                </div>
-                <h2>WHAT TO EXPECT</h2>
-            </div>
+    <button onclick="openModal('modal1')">Atractions</button>
+    <button onclick="openModal('modal2')">Fun fact</button>
+    <button onclick="openModal('modal3')">Weather</button>
+    <button onclick="openModal('modal4')">Statistics</button>
+    <button onclick="openModal('modal5')">Photos</button>
+
+    <!-- Okna modalne -->
+    <div class="modal" id="modal1">
+        <div class="modal-content">
+            <h2>OBJECT 1</h2>
+            <p>Description</p>
+            <button onclick="closeModal('modal1')">Close</button>
         </div>
     </div>
-    
-    </body>
-</html> 
+
+    <div class="modal" id="modal2">
+        <div class="modal-content">
+          <ul>
+            <li>First fact</li>
+            <li>Second fact</li>
+            <li>Third fact</li>
+          </ul>
+            <button onclick="closeModal('modal2')">Close</button>
+        </div>
+    </div>
+
+    <div class="modal" id="modal3">
+        <div class="modal-content">
+            <h2>Okno Modalne 3</h2>
+            <p>To jest zawartość okna modalnego 3.</p>
+            <button onclick="closeModal('modal3')">Close</button>
+        </div>
+    </div>
+
+    <div class="modal" id="modal4">
+        <div class="modal-content">
+            <ul>
+              <li>First number</li>
+              <li>Second number</li>
+              <li>Third number</li>
+            </ul>
+            <button onclick="closeModal('modal4')">Close</button>
+        </div>
+    </div>
+
+    <div class="modal" id="modal5">
+        <div class="modal-content">
+            <figure>
+              <img src="../../static/planets/venus.jpg" alt="venus">
+              <figcaption>Description</figcaption>
+            </figure>
+            <button onclick="closeModal('modal5')">Close</button>
+        </div>
+    </div>
+
+  </div>
+</div>
+<script>
+  // Funkcja otwierająca okno modalne
+  function openModal(modalId) {
+      var modal = document.getElementById(modalId);
+      modal.style.display = 'block';
+  }
+
+  // Funkcja zamykająca okno modalne
+  function closeModal(modalId) {
+      var modal = document.getElementById(modalId);
+      modal.style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
