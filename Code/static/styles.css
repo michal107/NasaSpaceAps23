@@ -1,7 +1,6 @@
 .title, .text, .container .content, .pre, .col, a:link, a:visited {
     color: #F2F0EB;
   }
-  
   * {
     box-sizing: border-box;
   }
@@ -95,9 +94,10 @@
 
   #myVideo {
     position: fixed;
+    top: 50px;
     right: 0;
     bottom: 0;
-    min-width: 100%;
+    min-width: 80%;
     min-height: 100%;
   }
 
