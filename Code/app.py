@@ -1,4 +1,4 @@
-from flask import Flask,request,render_template 
+from flask import Flask,request,render_template, redirect, url_for
 import sqlalchemy_utils
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase
@@ -6,12 +6,12 @@ from flask_migrate import Migrate
 import sqlite3
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlalite///db.sqlite3'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATION'] = False
 db = SQLAlchemy(app)
 
 class User(db.Model):
-     id = db.Column(db.Integer, primary_key=True, unique=True)
+     id = db.Column(db.Integer, primary_key=True, unique=True, autoincrement=True)
      name = db.Column(db.String(20), unique=True)
      mail = db.Column(db.String(50), unique=True)
      pwd = db.Column(db.String(50))
@@ -40,7 +40,10 @@ def register():
     if name1 in db or user_email in db:
          return render_template('register.html',info='User name or email already taken')
     else:
-	    return render_template('home.html',name=name1)
-
+        post = db(name = name1, password = pwd, email = user_email)
+        db.session.add(post)
+        db.session.commit()
+        return redirect(url_for('login.html'))
+    
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
