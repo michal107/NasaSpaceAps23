@@ -11,9 +11,13 @@ var ctx = document.body.appendChild(document.createElement('canvas')).getContext
     alpha: true
   });
 
+
+
+const loader = new THREE.TextureLoader();
+
 document.body.appendChild(renderer.domElement);
 renderer.domElement.style.position =
-  ctx.canvas.style.position = 'fixed';
+ctx.canvas.style.position = 'fixed';
 ctx.canvas.style.background = 'black';
 
 function resize() {
@@ -59,43 +63,12 @@ controls.enableDamping = true;
 controls.dampingFactor = 1;
 
 //Objects
-var starColor = (function() {
-    var colors = [0xFFFF00, 0x559999, 0xFF6339, 0xFFFFFF];
-    return colors[Math.floor(Math.random() * colors.length)];
-  })(),
-  star = new THREE.Mesh(
-    new THREE.IcosahedronGeometry(7, 1),
-    new THREE.MeshBasicMaterial({
-      color: 0xFFFFFF,
-    })
-  ),
-  glows = [];
+var map = loader.load('https://solartextures.b-cdn.net/2k_sun.jpg'),
+star = new THREE.Mesh(new THREE.SphereBufferGeometry(20, 50, 50), new THREE.MeshBasicMaterial({map})),
+glows = [];
 
 star.castShadow = false;
 scene.add(star);
-
-for (var i = 1, scaleX = 1.1, scaleY = 1.1, scaleZ = 1.1; i < 5; i++) {
-  var starGlow = new THREE.Mesh(
-    new THREE.IcosahedronGeometry(7, 1),
-    new THREE.MeshBasicMaterial({
-      color: starColor,
-      transparent: true,
-      opacity: 0.5
-    })
-  );
-  starGlow.castShadow = false;
-  scaleX += 0.4 + Math.random() * .5;
-  scaleY += 0.4 + Math.random() * .5;
-  scaleZ += 0.4 + Math.random() * .5;
-  starGlow.scale.set(scaleX, scaleY, scaleZ);
-  starGlow.origScale = {
-    x: scaleX,
-    y: scaleY,
-    z: scaleZ
-  };
-  glows.push(starGlow);
-  scene.add(starGlow);
-}
 
 let gui = new GUI();
 
@@ -107,53 +80,72 @@ var planetColors = [
     0x599532, //green
     0x267257 //bluegreen
   ],
-  planets = [];
+  planets = [
+    
+  ];
 
-for (var p = 0, radii = 0; p < 5; p++) {
-  var size = 4 + Math.random() * 7,
-    type = Math.floor(Math.random() * planetColors.length),
-    roughness = Math.random() > .6 ? 1 : 0,
-    planetGeom = new THREE.Mesh(
-      new THREE.IcosahedronGeometry(size, roughness),
-      new THREE.MeshLambertMaterial({
-        color: planetColors[type],
-        shading: THREE.FlatShading
-      })
-    ),
+  const planet_names = [
+    "mercury",
+    "venus_atmosphere",
+    "earth_daymap",
+    "mars",
+    "jupiter",
+    "saturn",
+    "uranus",
+    "neptune"
+  ];
+
+  const planet_radius = [
+    10, 20, 22, 12, 60, 45, 30, 28
+  ];
+
+  const planet_orbit_radius = [
+    38,72,100,152,520,953,1919,3006
+  ]
+
+  const planet_resolution = 0.75;
+  const planet_resolution_additive = 4;
+
+  const planet_orbit_radius_scale = 0.1;
+
+for (var p = 0, radii = 0; p < 8; p++) {
+    var map = loader.load('https://solartextures.b-cdn.net/2k_'+planet_names[p]+'.jpg'),
+    planetGeom = new THREE.Mesh(new THREE.SphereBufferGeometry(Math.floor(planet_radius[p]*0.1), Math.floor(planet_radius[p]*planet_resolution)+planet_resolution_additive, Math.floor(planet_radius[p]*planet_resolution)+planet_resolution_additive), new THREE.MeshBasicMaterial({map})),
     planet = new THREE.Object3D();
 
-  planet.add(planetGeom);
+    planet.add(planetGeom);
 
-  if (type > 1 && Math.random() > 0.5) {
-    var atmoGeom = new THREE.Mesh(
-      new THREE.IcosahedronGeometry(size + 1.5, roughness),
-      new THREE.MeshLambertMaterial({
-        color: planetColors[3],
-        shading: THREE.FlatShading,
-        transparent: true,
-        opacity: 0.5
-      })
-    );
+    //TODO
+    // var atmoGeom = new THREE.Mesh(
+    // new THREE.SphereBufferGeometry(1, 32.5, 32.5),
+    // new THREE.MeshLambertMaterial({
+    //     color: planetColors[3],
+    //     shading: THREE.FlatShading,
+    //     transparent: true,
+    //     opacity: 0.5
+    //   })
+    // );
 
-    atmoGeom.castShadow = false;
-    planet.add(atmoGeom);
-  }
+    // atmoGeom.castShadow = false;
+    // planet.add(atmoGeom);
 
-  planet.orbitRadius = Math.random() * 50 + 50 + radii;
-  planet.rotSpeed = 0.005 + Math.random() * 0.01;
-  planet.rotSpeed *= Math.random() < .10 ? -1 : 1;
-  planet.rot = Math.random();
-  planet.orbitSpeed = (0.02 - p * 0.0048) * 0.25;
-  planet.orbit = Math.random() * Math.PI * 2;
-  planet.position.set(planet.orbitRadius, 0, 0);
+    //TODO
+    planet.orbitRadius = planet_orbit_radius[p];
+    planet.rotSpeed = 0.005 + Math.random() * 0.01;
+    // planet.rotSpeed *= Math.random() < .10 ? -1 : 1;
+    planet.rot = Math.random();
+    planet.orbitSpeed = (0.02 - p * 0.0048) * 0.25;
+    // planet.orbit = Math.random() * Math.PI * 2;
+    planet.orbit = Math.PI * 2;
+    planet.position.set(planet.orbitRadius, 0, 0);
 
-  let pts = new THREE.Path().absarc(0, 0, planet.orbitRadius, 0, Math.PI * 2).getPoints(90);
+    let pts = new THREE.Path().absarc(0, 0, planet.orbitRadius, 0, Math.PI * 2).getPoints(90);
     let g = new THREE.BufferGeometry().setFromPoints(pts);
-    g.rotateX(Math.PI * 0.5);
+    g.rotateX(Math.PI * 0.5);   
     let m = new THREE.LineBasicMaterial( { color: 0xffff00, transparent: true, opacity: 0.75 } );
     let orbit = new THREE.Line(g, m);
-    orbit.rotation.x = Math.PI / 6; // 30 deg
-    scene.add(orbit)
+    orbit.rotation.x = planet.orbit;
+    // scene.add(orbit);
 
     let pg = new THREE.SphereGeometry(20, 5, 2);
     let pm = new THREE.MeshLambertMaterial({color: "aqua"});
@@ -163,13 +155,13 @@ for (var p = 0, radii = 0; p < 5; p++) {
 
     scene.add(orbit);
 
-  radii = planet.orbitRadius + size;
+  radii = planet.orbitRadius + planet_orbit_radius[p];
   planets.push(planet);
   scene.add(planet);
 }
 
 //Lights
-var light1 = new THREE.PointLight(starColor, 2, 0, 0);
+var light1 = new THREE.PointLight(0xFDDA0D, 2, 0, 0);
 
 light1.position.set(0, 0, 0);
 scene.add(light1);
