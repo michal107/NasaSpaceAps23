@@ -8,5 +8,26 @@
 <br>
 <h1 align="center">Welcome {{name}} !</h1>
 
+
 </body>
+
+<script type="importmap">
+    {
+      "imports": {
+        "three": "{{ url_for('static', filename='libs/three/build/three.module.js') }}",
+        "three/addons/": "{{ url_for('static', filename='libs/three/examples/jsm/') }}"
+      }
+    }
+</script>
+    
+<script type="module">
+    // no need to use a bundler
+    
+    import * as THREE from 'three';
+    import Stats from 'three/addons/libs/stats.module.js';
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+    import { VRButton } from 'three/addons/webxr/VRButton.js';
+
+</script>
+
 </html>
