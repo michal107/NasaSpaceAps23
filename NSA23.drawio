@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-07T07:39:05.506Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="ylpFgKy1outKSXnxmXts" version="22.0.4" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-07T07:50:57.523Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="wcyyZsXTtEVrSQXdCeoF" version="22.0.4" type="github">
   <diagram name="Page-1" id="CeLdqJuVmfWnxO7F7-HU">
     <mxGraphModel dx="934" dy="609" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -66,6 +66,9 @@
               <mxPoint x="721" y="90" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="YB1WQG7mUbFabp3z918Y-22" value="Zaczynamy od listy konkretnych miejsc, ale jak się uda to dołożymy jeszcze mapę do wyboru miejsc/koordynaty dowolne" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="470" width="270" height="130" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
