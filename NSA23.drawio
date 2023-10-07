@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-07T07:27:40.777Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="m80ZA20gHs2lb41WtPqF" version="22.0.4" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-07T07:28:10.903Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="Zizo9dvt4WzsZnmm7_Vs" version="22.0.4" type="github">
   <diagram name="Page-1" id="CeLdqJuVmfWnxO7F7-HU">
     <mxGraphModel dx="934" dy="609" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -19,9 +19,6 @@
         <mxCell id="YB1WQG7mUbFabp3z918Y-8" value="Opis" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="YB1WQG7mUbFabp3z918Y-5">
           <mxGeometry y="90" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="gRFXIQvRJT9HWvVpxbt4-4" value="FRONTEND" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="390" y="360" width="60" height="30" as="geometry" />
-        </mxCell>
         <mxCell id="YB1WQG7mUbFabp3z918Y-9" value="Backend" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="370" y="250" width="140" height="150" as="geometry" />
         </mxCell>
@@ -34,9 +31,6 @@
         <mxCell id="YB1WQG7mUbFabp3z918Y-12" value="Wyznaczanie czasu, kosztu, odległość łączna" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="YB1WQG7mUbFabp3z918Y-9">
           <mxGeometry y="90" width="140" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="gRFXIQvRJT9HWvVpxbt4-5" value="BACKEND" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="675" y="360" width="60" height="30" as="geometry" />
-        </mxCell>
         <mxCell id="YB1WQG7mUbFabp3z918Y-13" value="Frontend" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="630" y="250" width="140" height="120" as="geometry" />
         </mxCell>
@@ -48,9 +42,6 @@
         </mxCell>
         <mxCell id="YB1WQG7mUbFabp3z918Y-16" value="Katalog miejsc" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="YB1WQG7mUbFabp3z918Y-13">
           <mxGeometry y="90" width="140" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="gRFXIQvRJT9HWvVpxbt4-6" value="CONTENT" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="110" y="360" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="YB1WQG7mUbFabp3z918Y-17" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="gRFXIQvRJT9HWvVpxbt4-1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
