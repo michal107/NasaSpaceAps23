@@ -1,3 +1,1 @@
-matplotlib==3.7.1
-Requests==2.31.0
 solarsystem==0.1.5
