@@ -24,6 +24,46 @@ def begin():
 def go_login():
      return render_template("login.html")
 
+@app.route('/go_register')
+def go_register():
+     return render_template('register.html')
+
+@app.route('/go_forgot_pwd')
+def go_forgot_pwd():
+     return render_template('forgot_pwd.html')
+
+@app.route('/go_bestsellers')
+def go_bestsellers():
+     return render_template('bestsellers.html')
+
+@app.route('/go_recomend')
+def go_recomend():
+     return render_template('recomendations.html')
+
+@app.route('/go_discover')
+def go_discover():
+     return render_template('discover.html')
+
+@app.route('/go_blog')
+def go_blog():
+     return render_template('blog.html')
+
+@app.route('/go_insurance')
+def go_insurance():
+     return render_template('insurance.html')
+
+@app.route('/go_travel_law')
+def go_travel_law():
+     return render_template('travel_law.html')
+
+@app.route('/go_conditions')
+def go_conditions():
+     return render_template('conditions.html')
+
+@app.route('/go_about')
+def go_about():
+     return render_template('about.html')
+
 @app.route('/form_login',methods=['POST','GET'])
 def login():
     name1=request.form['username']
@@ -35,11 +75,7 @@ def login():
             return render_template('login.html',info='Invalid Password')
         else:
 	         return render_template('home.html',name=name1)
-        
-@app.route('/go_register')
-def go_register():
-     return render_template('register.html')
-        
+
 @app.route('/register',methods=['POST'])
 def register():
     name1=request.form['username']
@@ -52,10 +88,6 @@ def register():
         db.session.add(post)
         db.session.commit()
         return redirect(url_for('login.html'))
-    
-@app.route('/go_forgot_pwd')
-def go_forgot_pwd():
-     return render_template('forgot_pwd.html')
     
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
