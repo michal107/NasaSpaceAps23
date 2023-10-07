@@ -6,26 +6,21 @@
   <title>Scorpio Trips</title>
   <video autoplay muted loop id="myVideo">
     <source src="../static/background.mp4" type="video/mp4">
-  </video>
 </head>
 <body>
 </main>
 <div class="container">
   <div class="content">
-    <form action="/form_login" method="post">
+    <form action="/form_register" method="post">
       <h2></h2>Username:<br>
-      <input type="text" name='username'><br>
-      Password:<br>
-      <input  name='password' ><br><br>
-    <input type="submit" value="Login">
+      <input type="text" name='username'>
+      <br>Password:<br>
+      <input  name='password' >
+      <br>Email:<br>
+      <input type=mail name='e-mail'><br>
+
+    <input type="submit" value="Register">
     </form> 
-    <form action="/go_register">
-      <input type="submit" value="Register"/>
-  </form>
-  <form action="/go_forgot_pwd">
-    <input type="submit" value="Forgot password?"/>
-</form>
-    <h1 >{{info}}</h1>
   </div>
 </div>
 </body>

@@ -36,6 +36,10 @@ def login():
         else:
 	         return render_template('home.html',name=name1)
         
+@app.route('/go_register')
+def go_register():
+     return render_template('register.html')
+        
 @app.route('/register',methods=['POST'])
 def register():
     name1=request.form['username']
@@ -48,6 +52,10 @@ def register():
         db.session.add(post)
         db.session.commit()
         return redirect(url_for('login.html'))
+    
+@app.route('/go_forgot_pwd')
+def go_forgot_pwd():
+     return render_template('forgot_pwd.html')
     
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
