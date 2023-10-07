@@ -18,7 +18,11 @@ class User(db.Model):
 
 @app.route('/')
 def begin():
-    return render_template("login.html")
+    return render_template("home.html")
+
+@app.route('/go_login')
+def go_login():
+     return render_template("login.html")
 
 @app.route('/form_login',methods=['POST','GET'])
 def login():
