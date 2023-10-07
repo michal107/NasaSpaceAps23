@@ -1,9 +1,12 @@
-<mxfile host="app.diagrams.net" modified="2023-10-07T07:08:32.520Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" version="22.0.4" etag="t4uhq4h4STGNqcKbqFOA" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-07T07:09:12.853Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="iZbCrmpZFes2lRyR6ciX" version="22.0.4" type="github">
   <diagram name="Page-1" id="CeLdqJuVmfWnxO7F7-HU">
-    <mxGraphModel>
+    <mxGraphModel dx="2100" dy="1084" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="gRFXIQvRJT9HWvVpxbt4-1" value="PROJEKT&lt;br&gt;SCORPIO&lt;br&gt;NASA SA23" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="380" y="60" width="120" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
