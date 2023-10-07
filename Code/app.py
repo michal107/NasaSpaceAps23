@@ -10,7 +10,11 @@ app = Flask(__name__)
 @app.route('/')
 def begin():
     return render_template("login.html")
-database={'Sophie':'123'}
+database={'1':'1'}
+
+# @app.route('/threejs') # JUST FOR TESTING
+# def threejs():
+#     return render_template('threejstest.html')
 
 @app.route('/form_login',methods=['POST','GET'])
 def login():
