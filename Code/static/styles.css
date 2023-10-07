@@ -1,0 +1,79 @@
+.title, .text, .container .content, .pre, .col, a:link, a:visited {
+    color: #F2F0EB;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  a:hover {
+    color: #FF69B4;
+  }
+  
+  .row {
+    font-size: 1.5vw;
+  }
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .col {
+    float: left;
+    padding: 0.5vw;
+  }
+  
+  .pre {
+    overflow: auto;
+    max-height: 16vw;
+  }
+  
+  .container {
+    position: relative;
+    margin: 0;
+  }
+  .container .content {
+    position: absolute;
+    bottom: 0;
+    background: #111810;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    padding: 1.5vw;
+    font-size: 1.5vw;
+  }
+  
+  .headline {
+    background-color: #FF8000;
+    font-size: 1.5vw;
+    color: #111810;
+    padding-top: 1.5vw;
+  }
+  
+  .map {
+    background-color: #FF8000;
+    font-size: 1.5vw;
+    color: #111810;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    text-align: center;
+    box-shadow: 0 0 3px 3px #111810 inset;
+  }
+  
+  .text {
+    font-size: 1.2vw;
+  }
+  
+  .title {
+    font-size: 1.8vw;
+  }
+  
+  .maincolor {
+    background-color: #111810;
+  }
+  
+  .sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+  }  

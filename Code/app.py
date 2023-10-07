@@ -3,17 +3,12 @@ import sqlalchemy_utils
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase
 from flask_migrate import Migrate
-from flask_login import LoginManager
-
-login_manager = LoginManager()
-login_manager.init_app()
-
 
 app = Flask(__name__)
 
 
 @app.route('/')
-def hello_world():
+def begin():
     return render_template("login.html")
 database={'Sophie':'123'}
 
