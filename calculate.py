@@ -1,7 +1,7 @@
 import solarsystem
 from datetime import datetime
 import time as tm
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import math
 
 start = tm.time_ns()
