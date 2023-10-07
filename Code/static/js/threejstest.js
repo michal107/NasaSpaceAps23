@@ -11,8 +11,6 @@ var ctx = document.body.appendChild(document.createElement('canvas')).getContext
     alpha: true
   });
 
-
-
 const loader = new THREE.TextureLoader();
 
 document.body.appendChild(renderer.domElement);
@@ -64,13 +62,49 @@ controls.dampingFactor = 1;
 
 //Objects
 var map = loader.load('https://solartextures.b-cdn.net/2k_sun.jpg'),
-star = new THREE.Mesh(new THREE.SphereBufferGeometry(20, 50, 50), new THREE.MeshBasicMaterial({map})),
-glows = [];
+star = new THREE.Mesh(new THREE.SphereBufferGeometry(20, 50, 50), new THREE.MeshBasicMaterial({map}));
+// glows = [];
 
 star.castShadow = false;
 scene.add(star);
 
-let gui = new GUI();
+var map = loader.load('https://upload.wikimedia.org/wikipedia/commons/8/85/Solarsystemscope_texture_8k_stars_milky_way.jpg'),
+bgSphere = new THREE.Mesh(new THREE.SphereBufferGeometry( 3000, 32, 32).scale( -1, 1, 1),new THREE.MeshBasicMaterial({map}));
+bgSphere.castShadow = false;
+
+scene.add(bgSphere);
+
+var gui = new GUI(  );
+// gui.domElement.id = 'gui';
+
+let missionDate = {
+    timeElapsed: new Date().getTime(),
+    timeSpeed: 1.0
+};
+
+var buttonPause = { Pause:function(){ missionDate.timeSpeed = 0 }};
+var buttonSpeed1 = { Speed1:function(){ missionDate.timeSpeed = 1 }};
+var buttonSpeed2 = { Speed2:function(){ missionDate.timeSpeed = 2 }};
+// var buttonSpeed3 = { Speed3:function(){ missionDate.timeSpeed = 4 }};
+// var buttonSpeed4 = { Speed4:function(){ missionDate.timeSpeed = 8 }};
+// var buttonSpeed5 = { Speed5:function(){ missionDate.timeSpeed = 16 }};
+
+var dataObject = {
+    message: new Date(missionDate.timeElapsed).toString()
+};
+
+gui.add(dataObject, "message").name("Date:").listen();
+
+gui.add(missionDate, 'timeElapsed', new Date().getTime(), new Date().getTime()+631138519494).name("Time Control").listen();
+
+// gui.add(missionDate, 'timeSpeed', 0, 16).name("Predkosc");
+
+gui.add(buttonPause, 'Pause');
+gui.add(buttonSpeed1,'Speed1');
+gui.add(buttonSpeed2,'Speed2');
+// gui.add(buttonSpeed3,'Speed3');
+// gui.add(buttonSpeed4,'Speed4');
+// gui.add(buttonSpeed5,'Speed5');
 
 var planetColors = [
     0x333333, //grey
@@ -108,7 +142,7 @@ var planetColors = [
 
   const planet_orbit_radius_scale = 0.1;
 
-for (var p = 0, radii = 0; p < 8; p++) {
+for (var p = 0; p < 8; p++) {
     var map = loader.load('https://solartextures.b-cdn.net/2k_'+planet_names[p]+'.jpg'),
     planetGeom = new THREE.Mesh(new THREE.SphereBufferGeometry(Math.floor(planet_radius[p]*0.1), Math.floor(planet_radius[p]*planet_resolution)+planet_resolution_additive, Math.floor(planet_radius[p]*planet_resolution)+planet_resolution_additive), new THREE.MeshBasicMaterial({map})),
     planet = new THREE.Object3D();
@@ -145,19 +179,16 @@ for (var p = 0, radii = 0; p < 8; p++) {
     let m = new THREE.LineBasicMaterial( { color: 0xffff00, transparent: true, opacity: 0.75 } );
     let orbit = new THREE.Line(g, m);
     orbit.rotation.x = planet.orbit;
-    // scene.add(orbit);
 
     let pg = new THREE.SphereGeometry(20, 5, 2);
     let pm = new THREE.MeshLambertMaterial({color: "aqua"});
     let pl = new THREE.Mesh(pg, pm);
     pl.rotation.order = "ZYX";
+
     orbit.add(pl);
-
     scene.add(orbit);
-
-  radii = planet.orbitRadius + planet_orbit_radius[p];
-  planets.push(planet);
-  scene.add(planet);
+    planets.push(planet);
+    scene.add(planet);
 }
 
 //Lights
@@ -169,35 +200,9 @@ scene.add(light1);
 var light2 = new THREE.AmbientLight(0x090909);
 scene.add(light2);
 
-
-    // gui.add(orbit.rotation, "x", 0, Math.PI * 0.5).name("orbit rotation X");
-    // gui.add(planet, "inclination", 0, 90).name("planet inclination");
-
-    let clock = new THREE.Clock();
-
-//2D
-var bgStars = [];
-
-for (var i = 0; i < 500; i++) {
-  var tw = {
-    x: Math.random(),
-    y: Math.random()
-  }
-
-  bgStars.push(tw);
-}
-
-//Stat tracking
-// var stats = new Stats();
-// stats.setMode(0);
-// stats.domElement.style.position = 'absolute';
-// stats.domElement.style.left = '0px';
-// stats.domElement.style.top = '0px';
-
-// document.body.appendChild(stats.domElement);
+let clock = new THREE.Clock();
 
 //Main Loop
-var t = 0;
 function animate() {
 //   stats.begin();
 
@@ -205,43 +210,20 @@ function animate() {
   ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
   ctx.fillStyle = 'rgba(255,255,255,0.25)';
 
-  for (var s in bgStars) {
-    var q = bgStars[s],
-      oX = q.x * ctx.canvas.width,
-      oY = q.y * ctx.canvas.height,
-      size = Math.random() < .9998 ? Math.random() : Math.random() * 3;
-
-    ctx.beginPath();
-    ctx.moveTo(oX, oY - size);
-    ctx.lineTo(oX + size, oY);
-    ctx.lineTo(oX, oY + size);
-    ctx.lineTo(oX - size, oY);
-    ctx.closePath();
-    ctx.fill();
-  }
+  missionDate.timeElapsed += missionDate.timeSpeed;
+  dataObject.message = new Date(missionDate.timeElapsed).toString();
 
   for (var p in planets) {
     var planet = planets[p];
-    planet.rot += planet.rotSpeed
+    planet.rot = planet.rotSpeed*missionDate.timeElapsed;
     planet.rotation.set(0, planet.rot, 0);
-    planet.orbit += planet.orbitSpeed;
+    planet.orbit = planet.orbitSpeed*missionDate.timeElapsed;
     planet.position.set(Math.cos(planet.orbit) * planet.orbitRadius, 0, Math.sin(planet.orbit) * planet.orbitRadius);
   }
-  t += 0.01;
-  star.rotation.set(0, t, 0);
-  for (var g in glows) {
-    var glow = glows[g];
-    glow.scale.set(
-      Math.max(glow.origScale.x - .2, Math.min(glow.origScale.x + .2, glow.scale.x + (Math.random() > .5 ? 0.005 : -0.005))),
-      Math.max(glow.origScale.y - .2, Math.min(glow.origScale.y + .2, glow.scale.y + (Math.random() > .5 ? 0.005 : -0.005))),
-      Math.max(glow.origScale.z - .2, Math.min(glow.origScale.z + .2, glow.scale.z + (Math.random() > .5 ? 0.005 : -0.005)))
-    );
-    glow.rotation.set(0, t, 0);
-  }
-
+  
+  star.rotation.set(0, missionDate.timeElapsed*0.1, 0);
+  
   renderer.render(scene, camera);
-
-//   stats.end();
 
   requestAnimationFrame(animate);
 }
