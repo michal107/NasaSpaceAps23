@@ -1,11 +1,20 @@
-<mxfile host="app.diagrams.net" modified="2023-10-07T07:09:12.853Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="iZbCrmpZFes2lRyR6ciX" version="22.0.4" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-07T07:13:21.650Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="m2E6VqRI_JkMcms9tNgA" version="22.0.4" type="github">
   <diagram name="Page-1" id="CeLdqJuVmfWnxO7F7-HU">
-    <mxGraphModel dx="2100" dy="1084" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1235" dy="638" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="gRFXIQvRJT9HWvVpxbt4-1" value="PROJEKT&lt;br&gt;SCORPIO&lt;br&gt;NASA SA23" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="380" y="60" width="120" height="60" as="geometry" />
+          <mxGeometry x="365" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gRFXIQvRJT9HWvVpxbt4-4" value="FRONTEND" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="390" y="360" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gRFXIQvRJT9HWvVpxbt4-5" value="BACKEND" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="675" y="360" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gRFXIQvRJT9HWvVpxbt4-6" value="CONTENT" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="110" y="360" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
