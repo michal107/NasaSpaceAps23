@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-07T07:59:15.233Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/118.0" etag="r39e2qYDpcUwlTTXGxFf" version="22.0.4" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-07T07:59:54.942Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/118.0" etag="MZOcN_mFyLUzl2c_3Prx" version="22.0.4" type="github">
   <diagram name="Page-1" id="CeLdqJuVmfWnxO7F7-HU">
     <mxGraphModel dx="1496" dy="867" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -40,16 +40,16 @@
         <mxCell id="YB1WQG7mUbFabp3z918Y-14" value="Destination selection, drop down list?" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="YB1WQG7mUbFabp3z918Y-13" vertex="1">
           <mxGeometry y="30" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="YB1WQG7mUbFabp3z918Y-15" value="Zmiana kolejności?" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="YB1WQG7mUbFabp3z918Y-13" vertex="1">
+        <mxCell id="YB1WQG7mUbFabp3z918Y-15" value="Order rearrangement" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="YB1WQG7mUbFabp3z918Y-13" vertex="1">
           <mxGeometry y="60" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="YB1WQG7mUbFabp3z918Y-16" value="Katalog miejsc" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="YB1WQG7mUbFabp3z918Y-13" vertex="1">
+        <mxCell id="YB1WQG7mUbFabp3z918Y-16" value="Destination catalogue" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="YB1WQG7mUbFabp3z918Y-13" vertex="1">
           <mxGeometry y="90" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="3cZl1geuy3UGx245xrvx-1" value="Wybór środka transportu" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="YB1WQG7mUbFabp3z918Y-13">
+        <mxCell id="3cZl1geuy3UGx245xrvx-1" value="&lt;div&gt;Transport vehicle choice&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="YB1WQG7mUbFabp3z918Y-13">
           <mxGeometry y="120" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="3cZl1geuy3UGx245xrvx-2" value="&lt;div&gt;Wybór zakwaterowania&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="YB1WQG7mUbFabp3z918Y-13">
+        <mxCell id="3cZl1geuy3UGx245xrvx-2" value="Accomodation selection" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="YB1WQG7mUbFabp3z918Y-13">
           <mxGeometry y="150" width="140" height="30" as="geometry" />
         </mxCell>
         <mxCell id="YB1WQG7mUbFabp3z918Y-17" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="gRFXIQvRJT9HWvVpxbt4-1" edge="1">
