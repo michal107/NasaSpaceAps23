@@ -1,0 +1,47 @@
+/* Style for the article container */
+.article {
+    margin-bottom: 20px;
+    border: 3px solid #ccc;
+    padding: 20px;
+}
+
+/* Style for the article title */
+.article h2 {
+    color: white;
+    font-size: 24px;
+}
+
+/* Style for the article publication date */
+.article p {
+    font-style: italic;
+    color: #888777;
+}
+
+/* Style for the article summary */
+.summary {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Style for the article image */
+.article img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+}
+
+/* Style for the "Read more" button */
+.read-more-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.read-more-button:hover {
+    background-color: black;
+}

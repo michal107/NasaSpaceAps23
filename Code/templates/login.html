@@ -2,13 +2,28 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" type="text/css" href="../static/styles.css">
+  <script src="script.js"></script>
   <meta charset="UTF-8">
   <title>Scorpio Trips</title>
 </head>
 <body>
-</main>
+  <video autoplay muted loop id="myVideo">
+    <source src="../static/background.mp4" type="video/mp4">
+  </video>
+<div id="topnav" class="topnav" style="position: fixed;">
+  <a href="/">HOME</a>
+  <a href="/go_bestsellers">BESTSELLERS</a>
+  <a href="/go_recomend">OUR RECOMENDATIONS</a>
+  <a href="/go_discover">DISCOVER</a>
+  <a href="/go_blog">BLOG</a>
+  <a href= "/go_insurance">INSURANCE</a>
+  <a href= "/go_travel_law">TRAVEL LAW</a>
+  <a href= "/go_conditions">CONDITIONS</a>
+  <a href="/go_about">ABOUT US</a>
+  <a class="active" img href="/go_login"><img style="width:40px;"src="../static/login_icon.png"></a>
+</div>
 <div class="container">
-  <img src="../static/backgroung.jpg" alt="rover" style="width:100%;">
+  
   <div class="content">
     <form action="/form_login" method="post">
       <h2></h2>Username:<br>
@@ -17,7 +32,12 @@
       <input  name='password' ><br><br>
     <input type="submit" value="Login">
     </form> 
-    <button value="Register">Register</button>
+    <form action="/go_register">
+      <input type="submit" value="Register"/>
+  </form>
+  <form action="/go_forgot_pwd">
+    <input type="submit" value="Forgot password?"/>
+</form>
     <h1 >{{info}}</h1>
   </div>
 </div>

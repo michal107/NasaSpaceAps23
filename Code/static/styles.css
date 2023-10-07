@@ -1,13 +1,19 @@
 .title, .text, .container .content, .pre, .col, a:link, a:visited {
-    color: #F2F0EB;
+    color: white;
   }
-  
   * {
     box-sizing: border-box;
   }
-  
+
+  body {
+    font-family: "Helvetica", Sans-Serif;
+    background-image: url("../static/stars.jpg");
+    background-size: cover;
+    color: white;
+  }
+
   a:hover {
-    color: #FF69B4;
+    color: red;
   }
   
   .row {
@@ -37,7 +43,7 @@
   .container .content {
     text-align: center;
     position: absolute;
-    top: 35%;
+    top: 100px;
     left: 40%;
     background: #111810;
     background: rgba(0, 0, 0, 0.5);
@@ -49,18 +55,8 @@
   .headline {
     background-color: #FF8000;
     font-size: 1.5vw;
-    color: #111810;
+    color: white;
     padding-top: 1.5vw;
-  }
-  
-  .map {
-    background-color: #FF8000;
-    font-size: 1.5vw;
-    color: #111810;
-    padding-top: 1vw;
-    padding-bottom: 1vw;
-    text-align: center;
-    box-shadow: 0 0 3px 3px #111810 inset;
   }
   
   .text {
@@ -84,11 +80,86 @@
   .button {
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 2vw 2vw;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 6px 6px;
     cursor: pointer;
+  }
+
+  #myVideo {
+    position: fixed;
+    top: 0px;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  .topnav {
+    overflow: hidden;
+    /* background-image: url(../static/stars.jpg); */
+    /* background-size: cover; */
+    /* position: fixed; */
+  }
+  
+  .topnav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: black;
+    color: #EF0B0B;
+  }
+  
+  .topnav a.active {
+    background-color: #EF0B0B;
+    color: black;
+  }
+
+  .row {
+    font-size: 1.5vw;
+  }
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .col {
+    float: center;
+    padding: 0.5vw;
+    text-align: center;
+  }
+
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* optional, depending on the layout you want */
+  }
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+    text-align: center;
+  }
+  
+  table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* optional, depending on the layout you want */
+  }
+  
+  .col {
+    padding: 0.5vw;
+    text-align: center;
   }
