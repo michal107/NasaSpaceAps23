@@ -32,7 +32,7 @@ def login():
         else:
 	         return render_template('home.html',name=name1)
         
-@app.route('/form_register',methods=['POST'])
+@app.route('/register',methods=['POST'])
 def register():
     name1=request.form['username']
     pwd=request.form['password']
