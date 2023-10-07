@@ -134,6 +134,7 @@
   }
   
   .col {
-    float: left;
+    float: center;
     padding: 0.5vw;
+    text-align: center;
   }

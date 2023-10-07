@@ -64,6 +64,34 @@ def go_conditions():
 def go_about():
      return render_template('about.html')
 
+@app.route('/go_mercury')
+def go_mercury():
+     return render_template('planets/mercury.html')
+
+@app.route('/go_venus')
+def go_venus():
+     return render_template('planets/venus.html')
+
+@app.route('/go_mars')
+def go_mars():
+     return render_template('planets/mars.html')
+
+@app.route('/go_jupiter')
+def go_jupiter():
+     return render_template('planets/jupiter.html')
+
+@app.route('/go_saturn')
+def go_saturn():
+     return render_template('planets/saturn.html')
+
+@app.route('/go_uranus')
+def go_uranus():
+     return render_template('planets/uranus.html')
+
+@app.route('/go_neptune')
+def go_neptune():
+     return render_template('planets/neptune.html')
+
 @app.route('/form_login',methods=['POST','GET'])
 def login():
     name1=request.form['username']
