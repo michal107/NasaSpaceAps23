@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" type="text/css" href="../../static/planets.css">
-  <script src="script.js"></script>
   <meta charset="UTF-8">
   <title>Scorpio Trips</title>
 </head>
@@ -13,28 +12,37 @@
 </main>
 <div id="topnav" class="topnav" style="position: fixed;">
   <a href="/">HOME</a>
-  <a href="/go_bestsellers">BESTSELLERS</a>
   <a href="/go_recomend">OUR RECOMENDATIONS</a>
   <a href="/go_discover">DISCOVER</a>
   <a href="/go_blog">BLOG</a>
-  <a href= "/go_insurance">INSURANCE</a>
-  <a href= "/go_travel_law">TRAVEL LAW</a>
-  <a href= "/go_conditions">CONDITIONS</a>
+  <div class="dropdown">
+      <button class="dropbtn">TRAVEL DETAILS
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+        <a href= "/go_transport">TRANSPORT</a>
+        <a href= "/go_hotel">ACCOMODATION</a>
+        <a href= "/go_insurance">INSURANCE</a>
+        <a href= "/go_travel_law">DEPATRURE REGULATIONS</a>
+        <a href= "/go_conditions">CONDITIONS</a>
+    </div>
+</div>
   <a href="/go_about">ABOUT US</a>
   <a class="active" img href="/go_login"><img style="width:40px;"src="../static/login_icon.png"></a>
 </div>
+
 <div class="container">
   <div class="content">
     <h1>VENUS</h1>
     <h3>LET'S GET HOT TOGETHER!</h3>
     <div class="row">
-      <div class="col">
+      <!-- <div class="col">
         <a href="www.google.com"><img src="../../static/ofer1_icon.png" style="width: 40px;"></a><br>
         <figurecaption>Trip to C13</figurecaption>
-      </div>
+      </div> -->
       <div class="col">
-        <a href="www.google.com"><img src="../../static/ofer2_icon.png" style="width: 40px;"></a><br>
-        <figurecaption>Trip to hell</figurecaption>
+        <a href="../../static/offers/Hot climates in the solar system.pdf"><img src="../../static/ofer2_icon.png" style="width: 40px;"></a><br>
+        <figurecaption>Explore the true hotness!</figurecaption>
       </div>
     </div>
     
@@ -46,9 +54,9 @@
 
     <!-- Okna modalne -->
     <div class="modal" id="modal1">
-        <div class="modal-content">
-            <h2>OBJECT 1</h2>
-            <p>Description</p>
+        <div class="modal-content" style="text-align: center;">
+            <h2>A city in the clouds</h2>
+            <p>About to explore the entire solar system, but worried about the conditions on Venus? Rest assured, our habitat is far from the extreme conditions of this rocky planet - the residents of our hotel have their heads high in the clouds! Here, at an altitude of 50 km above the surface of the second planet from the sun, atmospheric conditions are similar to those on Earth - the pressure is equal to 1 atm and the temperature does not exceed 50°C. Inside our sky hotels, you can relax without any worries!</p>
             <button onclick="closeModal('modal1')">Close</button>
         </div>
     </div>
@@ -56,9 +64,8 @@
     <div class="modal" id="modal2">
         <div class="modal-content">
           <ul>
-            <li>First fact</li>
-            <li>Second fact</li>
-            <li>Third fact</li>
+            <li>Hell's Planet - from astronomical observations, one might conclude that Venus is a planet similar to our own - similar mass, size, and distance from the sun. Opinion of this planet changed completely when the soviet Venus missions reached the surface shrouded in dense clouds - there they found a volcanic landscape and pressures equal to those in the depths of Earth's oceans. </li>
+            <li>A warning for Earth - it is postulated that the surface of Venus was not always such an unfriendly environment for life, in the distant past much more pleasant conditions may have prevailed near the surface of this planet. The extremely strong greenhouse effect is responsible for the current state - Venus' present atmosphere consists of more than 96% carbon dioxide, which, being a greenhouse gas, causes the so-called 'greenhouse effect'. This means that incident solar radiation radiating onto Venus causes this energy to be trapped near the surface of the planet, infinitely heating it. Let's keep this in mind so that we don't turn our own home into an inferno with inappropriate global warming decisions...</li>
           </ul>
             <button onclick="closeModal('modal2')">Close</button>
         </div>
@@ -66,8 +73,10 @@
 
     <div class="modal" id="modal3">
         <div class="modal-content">
-            <h2>Okno Modalne 3</h2>
-            <p>To jest zawartość okna modalnego 3.</p>
+            <ul>
+              <li>Average surface temperature on Venus: 464°C</li>
+              <li>Average atmospheric pressure: 9100 kPa</li>
+            </ul>
             <button onclick="closeModal('modal3')">Close</button>
         </div>
     </div>
@@ -75,37 +84,101 @@
     <div class="modal" id="modal4">
         <div class="modal-content">
             <ul>
-              <li>First number</li>
-              <li>Second number</li>
-              <li>Third number</li>
+              <li>Day on Venus: 243 Earth days, year on Venus lasts 225 Earth days</li>
+              <li>How many Earths can fit inside Venus: 0.815 Earths</li>
+              <li>How many Earth masses is one Venus mass: 0.857 Earths</li>
+              <li>Distance to the sun: 0.72 AU (1 AU = 149 597 871 km)</li>
             </ul>
             <button onclick="closeModal('modal4')">Close</button>
         </div>
     </div>
 
     <div class="modal" id="modal5">
-        <div class="modal-content">
-            <figure>
-              <img src="../../static/planets/venus.jpg" alt="venus">
-              <figcaption>Description</figcaption>
-            </figure>
-            <button onclick="closeModal('modal5')">Close</button>
+      <div class="modal-content" style="text-align: center;">
+        <div class="slideshow-container" style="text-align: center;">
+          <!-- Slajdy -->
+          <div class="mySlides">
+              <img src="../../static/planets/Wenus/Venus.jpg" style="width: 100%;">
+              <figurecaption>Mariner 9 image of Venus</figurecaption>
+          </div>
+  
+          <div class="mySlides">
+            <img src="../../static/planets/Wenus/Venus_surface.jpg" style="width: 100%;">
+            <figurecaption>Venera 14 image of Venusian surface</figurecaption>
+          </div>
+  
+          <div class="mySlides">
+            <img src="../../static/planets/Wenus/jpegPIA00245.jpg" style="width: 100%;">
+            <figurecaption>Orbiter's image of Venus surface</figurecaption>
+          </div>
+  
+          <!-- Przyciski nawigacyjne -->
+          <a class="prev" onclick="plusSlides(-1)">Previous</a>
+          <a class="next" onclick="plusSlides(1)">Next</a>
+          <!-- Punkty pod slajdami -->
+          <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
         </div>
     </div>
-
+          <button onclick="closeModal('modal5')">Close</button>
+      </div>
   </div>
+
+</div>
 </div>
 <script>
-  // Funkcja otwierająca okno modalne
-  function openModal(modalId) {
-      var modal = document.getElementById(modalId);
-      modal.style.display = 'block';
+// Funkcja otwierająca okno modalne
+function openModal(modalId) {
+    var modal = document.getElementById(modalId);
+    modal.style.display = 'block';
+}
+
+// Funkcja zamykająca okno modalne
+function closeModal(modalId) {
+    var modal = document.getElementById(modalId);
+    modal.style.display = 'none';
+}
+
+//Funkcje pokazu slajdów
+let slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Funkcja do przechodzenia do poprzedniego/następnego slajdu
+  function plusSlides(n) {
+      showSlides(slideIndex += n);
   }
 
-  // Funkcja zamykająca okno modalne
-  function closeModal(modalId) {
-      var modal = document.getElementById(modalId);
-      modal.style.display = 'none';
+  // Funkcja do przejścia do konkretnego slajdu po kliknięciu na punkt
+  function currentSlide(n) {
+      showSlides(slideIndex = n);
+  }
+
+  // Funkcja do wyświetlania slajdów
+  function showSlides(n) {
+      let i;
+      const slides = document.getElementsByClassName("mySlides");
+      const dots = document.getElementsByClassName("dot");
+
+      if (n > slides.length) {
+          slideIndex = 1;
+      }
+
+      if (n < 1) {
+          slideIndex = slides.length;
+      }
+
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
   }
 </script>
 
