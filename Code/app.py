@@ -7,6 +7,8 @@ import sqlite3
 import calculate
 import math
 
+loggedInUser = None
+
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATION'] = False
@@ -34,9 +36,9 @@ def go_register():
 def go_forgot_pwd():
      return render_template('forgot_pwd.html')
 
-@app.route('/go_bestsellers')
-def go_bestsellers():
-     return render_template('bestsellers.html')
+@app.route('/go_transport')
+def go_transport():
+     return render_template('transport.html')
 
 @app.route('/go_recomend')
 def go_recomend():
@@ -66,6 +68,10 @@ def go_conditions():
 def go_about():
      return render_template('about.html')
 
+@app.route('/go_hotel')
+def go_hotel():
+     return render_template('hotel.html')
+
 @app.route('/go_mercury')
 def go_mercury():
      return render_template('planets/mercury.html')
@@ -93,20 +99,6 @@ def go_uranus():
 @app.route('/go_neptune')
 def go_neptune():
      return render_template('planets/neptune.html')
-
-tabs = [
-    {"id": "tab1", "label": "Atractions", "content": "To jest zawartość zakładki 1.", "image_url": "/static/image1.jpg"},
-    {"id": "tab2", "label": "Zakładka 2", "content": "To jest zawartość zakładki 2.", "image_url": "/static/image2.jpg"},
-    {"id": "tab3", "label": "Zakładka 3", "content": "To jest zawartość zakładki 3.", "image_url": "/static/image3.jpg"},
-]
-
-@app.route("/get_result/<url>", methods=['GET'])
-def get_result(url):
-    return calculate.position(int((int(url)/1000)))
-
-@app.route('/')
-def index():
-    return render_template('tab_window.html', tabs=tabs)
 
 @app.route('/read_data')
 def read_text_file():

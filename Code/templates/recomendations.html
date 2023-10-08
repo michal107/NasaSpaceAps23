@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="../static/about.css">
     <link rel="stylesheet" type="text/css" href="../static/styles.css">
+    <script src="script.js"></script>
     <meta charset="UTF-8">
     <title>Home</title>
 </head>
@@ -9,20 +11,89 @@
 
     <div id="topnav" class="topnav">
         <a href="/">HOME</a>
-        <a href="/go_bestsellers">BESTSELLERS</a>
         <a class="active" href="/go_recomend">OUR RECOMENDATIONS</a>
         <a href="/go_discover">DISCOVER</a>
         <a href="/go_blog">BLOG</a>
-        <a href= "/go_insurance">INSURANCE</a>
-        <a href= "/go_travel_law">TRAVEL LAW</a>
-        <a href= "/go_conditions">CONDITIONS</a>
+        <div class="dropdown">
+            <button class="dropbtn">TRAVEL DETAILS
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href= "/go_transport">TRANSPORT</a>
+                <a href= "/go_hotel">ACCOMODATION</a>
+                <a href= "/go_insurance">INSURANCE</a>
+                <a href= "/go_travel_law">DEPATRURE REGULATIONS</a>
+                <a href= "/go_conditions">CONDITIONS</a>
+            </div>
+        </div>
         <a href="/go_about">ABOUT US</a>
         <a img href="/go_login"><img style="width:40px;"src="../static/login_icon.png"></a>
     </div>
     
     <div style="padding-left:16px">
-      <h2>Top Navigation Example</h2>
-      <p>Some content..</p>
+        <main>
+            <article>
+                <div class="article">
+                    <div class="row">
+                        <img class="col" src="../static/offers/jupiter_pole.webp" style = "width: 500px" >
+                        <div class="col">
+                            <h2>A Galilean adventure</h2>
+                            <p>Locations: Jupiter, Io, Europe, Ganymede, and Callisto</p>
+                            <p class="summary">Rediscover the neighborhood of the King of Planets! During this tour, you will have the opportunity to
+                                land on the moons Io, Europa, Ganymede, and Callisto. We provide views such as making a snowman
+                                out of freshly fallen sulfur on Io, the seafloor of Europa, impact craters on Ganymede and Jupiter
+                                admired from a hotel on Callisto, placed at a safe distance from the Gas Giant.</p>
+                            <a href="../static/offers/A Galilean adventure.pdf" class="read-more-button">Read more</a>
+                            <a href="/is_loged_in" class="read-more-button">Reserve</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="article">
+                    <div class="row">
+                        <img class="col" src="../static/offers/voyager.webp" style = "width: 500px" >
+                        <div class="col">
+                            <h2>In the footsteps of Voyager 2</h2>
+                            <p>Locations: Jupiter, Moon Io, Saturn, Titan, Uranus, Neptune</p>
+                            <p class="summary">This is the route taken by an unmanned space probe sent by NASA in 1977. During our expedition, we
+                                will visit as many as 4 planets of the Solar System. We will delve into the history of the Voyager
+                                mission, but also other fascinating missions from the second half of the 20th century.</p>
+                            <a href="../static/offers/In the footsteps of Voyager 2.pdf" class="read-more-button">Read more</a>
+                            <a href="/is_loged_in" class="read-more-button">Reserve</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="article">
+                    <div class="row">
+                        <img class="col" src="../static/offers/rover.jpg" style = "width: 500px" >
+                        <div class="col">
+                            <h2>On the trail of the robotic explorers of Mars</h2>
+                            <p>Locations: Mars</p>
+                            <p class="summary">Join us for a tour of our scientific heritage! During this space expedition, you will have the
+                                opportunity to see such historic sites as the landing areas of the Viking mission, the route of the
+                                Opportunity, Spirit, Curiosity, and Perseverance rovers, or see the site of the first manned landing on
+                                Mars!</p>
+                            <a href="../static/offers/On the trail of the robotic explorers of Mars.pdf" class="read-more-button">Read more</a>
+                            <a href="/is_loged_in" class="read-more-button">Reserve</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="article">
+                    <div class="row">
+                        <img class="col" src="../static/offers/hot.webp" style = "width: 500px" >
+                        <div class="col">
+                            <h2>Hot climates in the solar system</h2>
+                            <p>Locations: Venus</p>
+                            <p class="summary">This excursion is primarily aimed at lovers of incredible experiences and tropical climates. On this trip
+                                you will visit the planets Mercury and Venus, where the extreme temperatures will have everyone
+                                spellbound! You will have the opportunity to spend time in Hotels unique to the entire solar system -
+                                a wandering hotel on Mercury and a flying city in the higher layers of Venus' atmosphere.</p>
+                            <a href="../static/offers/Hot climates in the solar system.pdf" class="read-more-button">Read more</a>
+                            <a href="/is_loged_in" class="read-more-button">Reserve</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </main>
     </div>
     
     </body>

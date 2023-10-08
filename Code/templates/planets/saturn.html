@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="../../static/planets.css">
+  <meta charset="UTF-8">
+  <title>Scorpio Trips</title>
+</head>
+<body>
+  <video autoplay muted loop id="myVideo">
+    <source src="../../static/planet_background/saturn.mp4" type="video/mp4">
+  </video>
+</main>
+<div id="topnav" class="topnav" style="position: fixed;">
+  <a href="/">HOME</a>
+  <a href="/go_recomend">OUR RECOMENDATIONS</a>
+  <a href="/go_discover">DISCOVER</a>
+  <a href="/go_blog">BLOG</a>
+  <div class="dropdown">
+      <button class="dropbtn">TRAVEL DETAILS
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+        <a href= "/go_transport">TRANSPORT</a>
+        <a href= "/go_hotel">ACCOMODATION</a>
+        <a href= "/go_insurance">INSURANCE</a>
+        <a href= "/go_travel_law">DEPATRURE REGULATIONS</a>
+        <a href= "/go_conditions">CONDITIONS</a>
+    </div>
+</div>
+  <a href="/go_about">ABOUT US</a>
+  <a class="active" img href="/go_login"><img style="width:40px;"src="../static/login_icon.png"></a>
+</div>
+
+<div class="container">
+  <div class="content">
+    <h1>SATURN</h1>
+    <h3>THE RINGED GIANT</h3>
+    <div class="row">
+      <!-- <div class="col">
+        <a href="www.google.com"><img src="../../static/ofer1_icon.png" style="width: 40px;"></a><br>
+        <figurecaption>Trip to C13</figurecaption>
+      </div> -->
+      <div class="col">
+        <a href="../../static/offers/In the footsteps of Voyager 2.pdf"><img src="../../static/ofer2_icon.png" style="width: 40px;"></a><br>
+        <figurecaption>Follow the steps of Voyager 2</figurecaption>
+      </div>
+    </div>
+    
+    <button onclick="openModal('modal1')">Atractions</button>
+    <button onclick="openModal('modal2')">Fun fact</button>
+    <button onclick="openModal('modal3')">Weather</button>
+    <button onclick="openModal('modal4')">Statistics</button>
+    <button onclick="openModal('modal5')">Photos</button>
+
+    <!-- Okna modalne -->
+    <div class="modal" id="modal1">
+        <div class="modal-content" style="text-align: center;">
+            <h2>The hexagonal north pole! </h2>
+            <p>Do you miss the regularity of natural planetary landscapes? Want to see something mysterious and unrepeatable? We invite you to Saturn's North Pole, where you won't experience water snow, but an extremely regular hexagonal-shaped storm! Thanks to us, you can see it for yourself from the deck of our orbital hotel "Ringtopia", which is located at an altitude of 1,000 km above Saturn's atmosphere. </p>
+            <h2>The strongest lightning in the solar system</h2>
+            <p>Are you a true storm hunter? Are you not afraid of lightning and thunder and are even attracted to it? Then Saturn is just the place for you! Here you will experience with your own eyes the largest and most powerful lightning bolts that can be seen near our daily star!
+              The thunderstorms here generate discharges up to 10,000 times more powerful than those on our home planet!</p>
+            <h2>The majestic rings of the gas giant </h2>
+            <p>Have you ever observed Saturn's rings through a telescope? Have you dreamt of seeing them up close? To have them at your fingertips? Then this excursion is for you! 
+              With us you will be able to view them from the Cassini gap, which cuts through this formation with a space width of 4,700 km, and the ring system itself extends over 280,000 km from the planet's surface! (That's more than 2/3 the distance from the Earth to the Moon!)
+              </p>
+            <button onclick="closeModal('modal1')">Close</button>
+        </div>
+    </div>
+
+    <div class="modal" id="modal2">
+        <div class="modal-content">
+          <ul>
+            <li>Saturn's countless moons - More than 60 are known and named, but Saturn is known to have more than 140 natural satellites, making it the planet with the most moons in the solar system.</li>
+          </ul>
+            <button onclick="closeModal('modal2')">Close</button>
+        </div>
+    </div>
+
+    <div class="modal" id="modal3">
+        <div class="modal-content">
+            <ul>
+              <li>Average temperature of Saturn's surface layers:  -176 °C</li>
+              <li>Average pressure in the upper layers of the atmosphere:  140 kPa</li>
+              <li>Average wind speed in the upper layers of the atmosphere: 1800 km/h</li>
+            </ul>
+            <button onclick="closeModal('modal3')">Close</button>
+        </div>
+    </div>
+
+    <div class="modal" id="modal4">
+        <div class="modal-content">
+            <ul>
+              <li>A day on Saturn: 10.7h, a Saturnian year takes 29.45 Earth years</li>
+              <li>How many Earths can fit inside Saturn: 764</li>
+              <li>Distance to the sun: 9.5 AU (1 AU = 149 597 871 km)</li>
+              <li>Planet composition (by volume): 96.3% hydrogen; 3.25% helium; less than 0.5% of other gasses</li>
+            </ul>
+            <button onclick="closeModal('modal4')">Close</button>
+        </div>
+    </div>
+
+    <div class="modal" id="modal5">
+      <div class="modal-content" style="text-align: center;">
+        <div class="slideshow-container" style="text-align: center;">
+          <!-- Slajdy -->
+          <div class="mySlides">
+              <img src="../../static/planets/Saturn/PIA21611_-_Saturn_s_Hexagon_as_Summer_Solstice_Approaches.gif" style="width: 100%;">
+              <figurecaption>Hexagonal hurricane on Saturne's north pole</figurecaption>
+          </div>
+  
+          <div class="mySlides">
+            <img src="../../static/planets/Saturn/Saturn_and_rings.jpg" style="width: 100%;">
+            <figurecaption>Saturn and rings</figurecaption>
+          </div>
+  
+          <div class="mySlides">
+            <img src="../../static/planets/Saturn/jpegPIA09856.jpg" style="width: 100%;">
+            <figurecaption>Saturn and Titan </figurecaption>
+          </div>
+  
+          <!-- Przyciski nawigacyjne -->
+          <a class="prev" onclick="plusSlides(-1)">Previous</a>
+          <a class="next" onclick="plusSlides(1)">Next</a>
+          <!-- Punkty pod slajdami -->
+          <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+          <button onclick="closeModal('modal5')">Close</button>
+      </div>
+  </div>
+
+</div>
+</div>
+<script>
+// Funkcja otwierająca okno modalne
+function openModal(modalId) {
+    var modal = document.getElementById(modalId);
+    modal.style.display = 'block';
+}
+
+// Funkcja zamykająca okno modalne
+function closeModal(modalId) {
+    var modal = document.getElementById(modalId);
+    modal.style.display = 'none';
+}
+
+//Funkcje pokazu slajdów
+let slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Funkcja do przechodzenia do poprzedniego/następnego slajdu
+  function plusSlides(n) {
+      showSlides(slideIndex += n);
+  }
+
+  // Funkcja do przejścia do konkretnego slajdu po kliknięciu na punkt
+  function currentSlide(n) {
+      showSlides(slideIndex = n);
+  }
+
+  // Funkcja do wyświetlania slajdów
+  function showSlides(n) {
+      let i;
+      const slides = document.getElementsByClassName("mySlides");
+      const dots = document.getElementsByClassName("dot");
+
+      if (n > slides.length) {
+          slideIndex = 1;
+      }
+
+      if (n < 1) {
+          slideIndex = slides.length;
+      }
+
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+  }
+</script>
+
+</body>
+</html>

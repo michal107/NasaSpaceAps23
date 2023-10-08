@@ -10,21 +10,43 @@
 
     <div id="topnav" class="topnav">
         <a href="/">HOME</a>
-        <a href="/go_bestsellers">BESTSELLERS</a>
         <a href="/go_recomend">OUR RECOMENDATIONS</a>
         <a href="/go_discover">DISCOVER</a>
         <a href="/go_blog">BLOG</a>
-        <a href= "/go_insurance">INSURANCE</a>
-        <a href= "/go_travel_law">TRAVEL LAW</a>
-        <a class="active" href= "/go_conditions">CONDITIONS</a>
+        <div class="dropdown">
+            <button class="dropbtn">TRAVEL DETAILS
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href= "/go_transport">TRANSPORT</a>
+                <a href= "/go_hotel">ACCOMODATION</a>
+                <a href= "/go_insurance">INSURANCE</a>
+                <a href= "/go_travel_law">DEPATRURE REGULATIONS</a>
+                <a class="active" href="/go_conditions">CONDITIONS</a>
+            </div>
+        </div>
         <a href="/go_about">ABOUT US</a>
         <a img href="/go_login"><img style="width:40px;"src="../static/login_icon.png"></a>
     </div>
     
-    <div style="padding-left:16px">
-      <h2>Top Navigation Example</h2>
-      <p>Some content..</p>
-    </div>
+    <main>
+        <article class="article">
+            <div class="row">
+                <div class="col">
+                    <h1>DEPATRURE REGULATIONS</h1>
+                    <p class="summary">Due to the conditions in space, the length of the trip and the difficult access to medical care, the following are not allowed to participate in our tours:
+                        <ul>
+                            <li> Children under 18 years of age,</li>
+                            <li>Pregnant women,</li>
+                            <li>Chronically ill persons whose condition requires observation by a doctor,</li>
+                            <li>Persons who do not obtain a flight declaration from a space flight doctor.</li>
+                        </ul>
+                    </p>
+                </div>
+                <img class="col" src="../static/travel/conditions.png" style = "width: 800px;" >
+            </div>
+        </article>
+    </main>
     
     </body>
 </html> 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="../static/styles.css">
-    <link rel="stylesheet" type="text/css" href="../static/blog.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../static/about.css"> -->
     <script src="script.js"></script>
     <meta charset="UTF-8">
     <title>Home</title>
@@ -11,92 +11,77 @@
 
     <div id="topnav" class="topnav">
         <a href="/">HOME</a>
-        <a href="/go_bestsellers">BESTSELLERS</a>
         <a href="/go_recomend">OUR RECOMENDATIONS</a>
         <a href="/go_discover">DISCOVER</a>
         <a href="/go_blog">BLOG</a>
-        <a href= "/go_insurance">INSURANCE</a>
-        <a href= "/go_travel_law">TRAVEL LAW</a>
-        <a href= "/go_conditions">CONDITIONS</a>
+        <div class="dropdown">
+            <button class="dropbtn">TRAVEL DETAILS
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href= "/go_transport">TRANSPORT</a>
+                <a href= "/go_insurance">INSURANCE</a>
+                <a href= "/go_travel_law">DEPATRURE REGULATIONS</a>
+                <a href= "/go_conditions">CONDITIONS</a>
+            </div>
+        </div>
         <a class="active" href="/go_about">ABOUT US</a>
         <a img href="/go_login"><img style="width:40px;"src="../static/login_icon.png"></a>
     </div>
     
-    <main style="padding-left:16px">
-      <div class="article">
-        <tr>
-            <h1>
-                THE SCORPIO TEAM
-            </h1>
-            <h5>
-                We are a group of friends who met when we were still students and were brought together by our love of space and travel. So we decided to combine these passions and share them with others. We offer original tours of the most amazing places in the Solar System.
-            </h5>
-        </div>
-        <tr>
-            <img  src="../static/ekosfera.png" style = "width: 200px" alt="Team Scorpio">
-        </div>
-      </div><br><br>
-
-      <div class="article">
-        <tr>
-            <img  src="../static/ekosfera.png" style = "width: 50%" alt="Team Scorpio">
-        </div>
-        <tr>
-            <h1>
-                OUR MISSION
-            </h1>
-            <h5>
-                Our main task is to fulfil the dream of visiting space, which is at last widely available. However, traversing space is not everything. We strive to travel consciously and convey this idea to the participants of our trips. While exploring the most amazing corners of the Solar System, we want to educate. We want to sensitise travellers to the universe around us, but also to the beauty of our planet, the Earth. We show the world without a filter, by exploring it with all our senses. For us, travel means experiencing adventures and getting to know the cosmos, which is already at our fingertips.
-            </h5>
-        </div>
-      </div><br><br>
-
-      <h1 class="article">OUR VALUES</h1>
-      <div>
-        <tr>
-            <img  src="../static/ekosfera.png" alt="Team Scorpio">
-        </div>
-        <tr>
-            <img  src="../static/ekosfera.png" alt="Team Scorpio">
-        </div>
-        <tr>
-            <img  src="../static/ekosfera.png" alt="Team Scorpio">
-        </div>
-        <tr>
-            <img  src="../static/ekosfera.png" alt="Team Scorpio">
-        </div>
-      </div><br><br>
-
-      <div class="article">
-        <tr>
-            <td>
-                <h1>
-                    WE ARE BUILDING SOCIETY
-                </h1>
-                <h5>
-                    With our activities we try to enlarge and support the community of space enthusiasts primarily in Poland, but also worldwide. We provide free materials to help explore the Solar System, and on our trips we try to pass on our love of the cosmos.
-                </h5>
-            </td>
-            
-        </div>
-        <tr>
-            <img  src="../static/ekosfera.png" style = "width: 200px" alt="Team Scorpio">
-        </div>
-      </div><br><br>
-
-      <div class="article">
-        <tr>
-            <img src="../static/ekosfera.png" style = "width: 50%" alt="Team Scorpio">
-        </div>
-        <tr>
-            <h1>
-                RESPONSIBLE TRAVELING
-            </h1>
-            <h5>
-                On all of our expeditions, we explore with respect for the environment in an effort to leave the smallest possible footprint. We operate under the principle of less negative environmental impact more positive social impact.
-            </h5>
-        </div>
-      </div><br><br>
+    <main>
+        <article>
+            <div class="article">
+                <div class="row">
+                    <div class="col">
+                        <h1>THE SCORPIO TEAM</h1>
+                        <p class="summary">We are a group of friends who met when we were still students and were brought together by our love of space and travel. So we decided to combine these passions and share them with others. We offer original tours of the most amazing places in the Solar System.</p>
+                    </div>
+                    <img class="col" src="../static/team_photos/zespol1.jpg" style = "width: 300px;" >
+                    <img class="col" src="../static/team_photos/SnailMichael.jpg" style = "height: 300px;" >
+                    <!-- background: linear-gradient(to top, rgba(210, 12, 12, 0), rgba(76, 7, 2, 0.932)); -->
+                </div>
+            </div>
+            <div class="article">
+                <div class="row">
+                    <img class="col" src="../static/team_photos/zespol2.jpg" style = "width: 300px" >
+                    <div class="col">
+                        <h1>OUR MISSION</h1>
+                        <p class="summary">Our main task is to fulfil the dream of visiting space, which is at last widely available. However, traversing space is not everything. We strive to travel consciously and convey this idea to the participants of our trips. While exploring the most amazing corners of the Solar System, we want to educate. We want to sensitise travellers to the universe around us, but also to the beauty of our planet, the Earth. We show the world without a filter, by exploring it with all our senses. For us, travel means experiencing adventures and getting to know the cosmos, which is already at our fingertips.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="article">
+                <h1 style="text-align: center;">OUR VALUES</h1>
+                    <div class="row">
+                        <img class="col" src="../static/team_photos/Passion.png" style = "width: 400px" >  
+                        <img class="col" src="../static/team_photos/Education.png" style = "width: 400px" >   
+                    <!-- </div>
+                    <div class="row"> -->
+                        <!-- <img class="col" src="../static/team_photos/Quality.png" style = "width: 400px" >   -->
+                        <img class="col" src="../static/team_photos/Impact.png" style = "width: 400px" >  
+                    </div>
+            </div>
+            <div class="article">
+                <div class="row">
+                    <div class="col">
+                        <h1>WE ARE BUILDING A COMMUNITY</h1>
+                        <p class="summary">With our activities we try to enlarge and support the community of space enthusiasts primarily in Poland, but also worldwide. We provide free materials to help explore the Solar System, and on our trips we try to pass on our love of the cosmos.</p>
+                    </div>
+                    <img class="col" src="../static/team_photos/zespol3.jpg" style = "width: 300px" >
+                    
+                </div>
+            </div>
+            <div class="article">
+                <div class="row">
+                    <img class="col" src="../static/team_photos/zespol4.jpg" style = "width: 300px" >
+                    <div class="col">
+                        <h1>RESPONSIBLE TRAVELING</h1>
+                        <p class="summary">On all of our expeditions, we explore with respect for the environment in an effort to leave the smallest possible footprint. We operate under the principle of less negative environmental impact more positive social impact.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
     </main>
     
     </body>

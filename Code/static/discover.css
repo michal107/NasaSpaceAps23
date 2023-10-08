@@ -1,0 +1,42 @@
+/* Style for the article container */
+.article {
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.article h2 {
+    color: white;
+    font-size: 24px;
+}
+
+.article p {
+    font-style: italic;
+    color: #ccc;
+}
+
+.summary {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.article img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+}
+
+/* Style for button */
+.read-more-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.read-more-button:hover {
+    background-color: black;
+}

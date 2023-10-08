@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" type="text/css" href="../../static/planets.css">
-  <script src="script.js"></script>
   <meta charset="UTF-8">
   <title>Scorpio Trips</title>
 </head>
@@ -13,13 +12,21 @@
 </main>
 <div id="topnav" class="topnav" style="position: fixed;">
   <a href="/">HOME</a>
-  <a href="/go_bestsellers">BESTSELLERS</a>
   <a href="/go_recomend">OUR RECOMENDATIONS</a>
   <a href="/go_discover">DISCOVER</a>
   <a href="/go_blog">BLOG</a>
-  <a href= "/go_insurance">INSURANCE</a>
-  <a href= "/go_travel_law">TRAVEL LAW</a>
-  <a href= "/go_conditions">CONDITIONS</a>
+  <div class="dropdown">
+      <button class="dropbtn">TRAVEL DETAILS
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+        <a href= "/go_transport">TRANSPORT</a>
+        <a href= "/go_hotel">ACCOMODATION</a>
+        <a href= "/go_insurance">INSURANCE</a>
+        <a href= "/go_travel_law">DEPATRURE REGULATIONS</a>
+        <a href= "/go_conditions">CONDITIONS</a>
+    </div>
+</div>
   <a href="/go_about">ABOUT US</a>
   <a class="active" img href="/go_login"><img style="width:40px;"src="../static/login_icon.png"></a>
 </div>
@@ -27,7 +34,7 @@
   <div class="content">
     <h1>MERCURY</h1>
     <h3>ENJOY THE JOURNEY TOGETHER!</h3>
-    <div class="row">
+    <!-- <div class="row">
       <div class="col">
         <a href="www.google.com"><img src="../../static/ofer1_icon.png" style="width: 40px;"></a><br>
         <figurecaption>Trip to C13</figurecaption>
@@ -36,7 +43,7 @@
         <a href="www.google.com"><img src="../../static/ofer2_icon.png" style="width: 40px;"></a><br>
         <figurecaption>Trip to hell</figurecaption>
       </div>
-    </div>
+    </div> -->
     
     <button onclick="openModal('modal1')">Atractions</button>
     <button onclick="openModal('modal2')">Fun fact</button>
@@ -46,9 +53,9 @@
 
     <!-- Okna modalne -->
     <div class="modal" id="modal1">
-        <div class="modal-content">
-            <h2>OBJECT 1</h2>
-            <p>Description</p>
+        <div class="modal-content" style="text-align: center;">
+            <h2>Wandering 'Nomad' hotel </h2>
+            <p>Are you tired of stationary accommodation? Want your view from the window to change from hour to hour? Welcome to the "Nomad" hotel on the surface of Mercury! Due to the extreme temperatures prevailing on the illuminated part of the planet, our residence is constantly moving in such a way that its guests always remain in the relatively pleasant semi-shade of our daily star.</p>
             <button onclick="closeModal('modal1')">Close</button>
         </div>
     </div>
@@ -56,9 +63,8 @@
     <div class="modal" id="modal2">
         <div class="modal-content">
           <ul>
-            <li>First fact</li>
-            <li>Second fact</li>
-            <li>Third fact</li>
+            <li>A hot and cold planet - due to its too-small mass and too-high surface temperature, Mercury cannot support its atmosphere, so the pressure at the surface is only 0.5 nPa. Among other reasons, it is precisely because of the lack of an atmosphere that Mercury has the highest temperature amplitude in the solar system - on the side not illuminated by the Sun, the temperature falls below -176 °C. In contrast, on the illuminated side, it rises to 427 °C! </li>
+            <li>Planet of composers, painters, and poets - the craters on the moons and planets of the solar system are mostly named in various ways. On Mercury, the craters are named after... outstanding artists of all time! Therefore, when visiting the surface of Mercury, you will visit the crater of Rembrandt, Mozart, or Goethe, among others.</li>
           </ul>
             <button onclick="closeModal('modal2')">Close</button>
         </div>
@@ -66,8 +72,10 @@
 
     <div class="modal" id="modal3">
         <div class="modal-content">
-            <h2>Okno Modalne 3</h2>
-            <p>To jest zawartość okna modalnego 3.</p>
+            <ul>
+                <li>Mercury's average surface temperature varies from -176 to 427°C </li>
+                <li> Average atmospheric pressure: 0.5 nPa</li>
+            </ul>
             <button onclick="closeModal('modal3')">Close</button>
         </div>
     </div>
@@ -75,37 +83,101 @@
     <div class="modal" id="modal4">
         <div class="modal-content">
             <ul>
-              <li>First number</li>
-              <li>Second number</li>
-              <li>Third number</li>
+              <li>A day on Mercury: 59 Earth days, a year on Mercury lasts 88 Earth days</li>
+              <li>How many Earths can fit inside Mercury? Only 0.056 Earth volumes</li>
+              <li>How many Earth masses is one Mercury mass? Only 0.055 of the Earth's mass</li>
+              <li>Distance to the Sun: 0.4 AU (1 AU = 149 597 871 km)</li>
             </ul>
             <button onclick="closeModal('modal4')">Close</button>
         </div>
     </div>
 
     <div class="modal" id="modal5">
-        <div class="modal-content">
-            <figure>
-              <img src="../../static/planets/mercury.jpg" alt="mercury">
-              <figcaption>Description</figcaption>
-            </figure>
-            <button onclick="closeModal('modal5')">Close</button>
+      <div class="modal-content" style="text-align: center;">
+        <div class="slideshow-container" style="text-align: center;">
+          <!-- Slajdy -->
+          <div class="mySlides">
+              <img src="../../static/planets/Merkury/Mercury.jpg" style="width: 100%;">
+              <figurecaption>Sunrise on Mercury</figurecaption>
+          </div>
+  
+          <div class="mySlides">
+            <img src="../../static/planets/Merkury/386889087_3579694198985958_7213633099174967198_n.jpg" style="width: 100%;">
+            <figurecaption>Map of named Mercurian craters</figurecaption>
+          </div>
+  
+          <div class="mySlides">
+            <img src="../../static/planets/Merkury/jpegPIA02438.jpg" style="width: 100%;">
+            <figurecaption>Mercury surface in close up</figurecaption>
+          </div>
+  
+          <!-- Przyciski nawigacyjne -->
+          <a class="prev" onclick="plusSlides(-1)">Previous</a>
+          <a class="next" onclick="plusSlides(1)">Next</a>
+          <!-- Punkty pod slajdami -->
+          <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
         </div>
     </div>
-
+          <button onclick="closeModal('modal5')">Close</button>
+      </div>
   </div>
+
+</div>
 </div>
 <script>
-  // Funkcja otwierająca okno modalne
-  function openModal(modalId) {
-      var modal = document.getElementById(modalId);
-      modal.style.display = 'block';
+// Funkcja otwierająca okno modalne
+function openModal(modalId) {
+    var modal = document.getElementById(modalId);
+    modal.style.display = 'block';
+}
+
+// Funkcja zamykająca okno modalne
+function closeModal(modalId) {
+    var modal = document.getElementById(modalId);
+    modal.style.display = 'none';
+}
+
+//Funkcje pokazu slajdów
+let slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Funkcja do przechodzenia do poprzedniego/następnego slajdu
+  function plusSlides(n) {
+      showSlides(slideIndex += n);
   }
 
-  // Funkcja zamykająca okno modalne
-  function closeModal(modalId) {
-      var modal = document.getElementById(modalId);
-      modal.style.display = 'none';
+  // Funkcja do przejścia do konkretnego slajdu po kliknięciu na punkt
+  function currentSlide(n) {
+      showSlides(slideIndex = n);
+  }
+
+  // Funkcja do wyświetlania slajdów
+  function showSlides(n) {
+      let i;
+      const slides = document.getElementsByClassName("mySlides");
+      const dots = document.getElementsByClassName("dot");
+
+      if (n > slides.length) {
+          slideIndex = 1;
+      }
+
+      if (n < 1) {
+          slideIndex = slides.length;
+      }
+
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
   }
 </script>
 
