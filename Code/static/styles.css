@@ -172,6 +172,8 @@
 /* Wyświetlanie rozwijanego menu po najechaniu myszką */
 .dropdown:hover .dropdown-content {
     display: block;
+    position: fixed;
+    z-index: 9999;
 }
   .row {
     font-size: 1.5vw;

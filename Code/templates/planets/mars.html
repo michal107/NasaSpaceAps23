@@ -12,16 +12,25 @@
 </main>
 <div id="topnav" class="topnav" style="position: fixed;">
   <a href="/">HOME</a>
-  <a href="/go_bestsellers">BESTSELLERS</a>
   <a href="/go_recomend">OUR RECOMENDATIONS</a>
   <a href="/go_discover">DISCOVER</a>
   <a href="/go_blog">BLOG</a>
-  <a href= "/go_insurance">INSURANCE</a>
-  <a href= "/go_travel_law">TRAVEL LAW</a>
-  <a href= "/go_conditions">CONDITIONS</a>
+  <div class="dropdown">
+      <button class="dropbtn">TRAVEL DETAILS
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+        <a href= "/go_transport">TRANSPORT</a>
+        <a href= "/go_hotel">ACCOMODATION</a>
+        <a href= "/go_insurance">INSURANCE</a>
+        <a href= "/go_travel_law">DEPATRURE REGULATIONS</a>
+        <a href= "/go_conditions">CONDITIONS</a>
+    </div>
+</div>
   <a href="/go_about">ABOUT US</a>
   <a class="active" img href="/go_login"><img style="width:40px;"src="../static/login_icon.png"></a>
 </div>
+
 <div class="container">
   <div class="content">
     <h1>MARS</h1>
@@ -45,7 +54,7 @@
 
     <!-- Okna modalne -->
     <div class="modal" id="modal1">
-        <div class="modal-content">
+        <div class="modal-content" style="text-align: center;">
             <h2>Crown of the Tharsis Highlands</h2>
             <p>Join the greatest mountain adventure of all time, which outshines even the Himalayas with its challenges! Conquer some of the highest peaks on Mars (Ascraeus Mons, Pavonis Mons, Arsia Mons, and Olympus Mons) and conquer elevations of up to 15 km and climb to the limits of the Red Planet's atmosphere yourself, reaching the top of the Solar System!</p>
             <h2>Geological adventure in Valles Marineris </h2>
@@ -97,10 +106,6 @@
             </div>
     
             <div class="mySlides">
-              <img src="../../static/planets/Mars/Olympus Mons1.jpg" style="width: 100%;">
-            </div>
-    
-            <div class="mySlides">
               <img src="../../static/planets/Mars/Olympus Mons2.jpg" style="width: 100%;">
             </div>
 
@@ -117,8 +122,8 @@
             </div>
     
             <!-- Przyciski nawigacyjne -->
-            <a class="prev" onclick="plusSlides(-1)">Poprzedni</a>
-            <a class="next" onclick="plusSlides(1)">Następny</a>
+            <a class="prev" onclick="plusSlides(-1)">Previous</a>
+            <a class="next" onclick="plusSlides(1)">Next</a>
             <!-- Punkty pod slajdami -->
             <div class="dot-container">
               <span class="dot" onclick="currentSlide(1)"></span>

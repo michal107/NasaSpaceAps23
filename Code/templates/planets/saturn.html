@@ -12,16 +12,25 @@
 </main>
 <div id="topnav" class="topnav" style="position: fixed;">
   <a href="/">HOME</a>
-  <a href="/go_bestsellers">BESTSELLERS</a>
   <a href="/go_recomend">OUR RECOMENDATIONS</a>
   <a href="/go_discover">DISCOVER</a>
   <a href="/go_blog">BLOG</a>
-  <a href= "/go_insurance">INSURANCE</a>
-  <a href= "/go_travel_law">TRAVEL LAW</a>
-  <a href= "/go_conditions">CONDITIONS</a>
+  <div class="dropdown">
+      <button class="dropbtn">TRAVEL DETAILS
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+        <a href= "/go_transport">TRANSPORT</a>
+        <a href= "/go_hotel">ACCOMODATION</a>
+        <a href= "/go_insurance">INSURANCE</a>
+        <a href= "/go_travel_law">DEPATRURE REGULATIONS</a>
+        <a href= "/go_conditions">CONDITIONS</a>
+    </div>
+</div>
   <a href="/go_about">ABOUT US</a>
   <a class="active" img href="/go_login"><img style="width:40px;"src="../static/login_icon.png"></a>
 </div>
+
 <div class="container">
   <div class="content">
     <h1>SATURN</h1>
@@ -45,7 +54,7 @@
 
     <!-- Okna modalne -->
     <div class="modal" id="modal1">
-        <div class="modal-content">
+        <div class="modal-content" style="text-align: center;">
             <h2>The hexagonal north pole! </h2>
             <p>Do you miss the regularity of natural planetary landscapes? Want to see something mysterious and unrepeatable? We invite you to Saturn's North Pole, where you won't experience water snow, but an extremely regular hexagonal-shaped storm! Thanks to us, you can see it for yourself from the deck of our orbital hotel "Ringtopia", which is located at an altitude of 1,000 km above Saturn's atmosphere. </p>
             <h2>The strongest lightning in the solar system</h2>
@@ -108,8 +117,8 @@
           </div>
   
           <!-- Przyciski nawigacyjne -->
-          <a class="prev" onclick="plusSlides(-1)">Poprzedni</a>
-          <a class="next" onclick="plusSlides(1)">Następny</a>
+          <a class="prev" onclick="plusSlides(-1)">Previous</a>
+          <a class="next" onclick="plusSlides(1)">Next</a>
           <!-- Punkty pod slajdami -->
           <div class="dot-container">
             <span class="dot" onclick="currentSlide(1)"></span>
