@@ -1,0 +1,98 @@
+/* .dg.main.taller-than-window .close-button {
+    border-top: 1px solid #ddd;
+}
+
+.dg.main .close-button {
+    background-color: #e8e8e8;
+}
+ 
+.dg.main .close-button:hover {
+    background-color: #ddd;
+}
+
+.dg {
+    color: #555;
+    text-shadow: none !important;
+}
+
+.dg.main::-webkit-scrollbar {
+    background: #fafafa;
+}
+
+.dg.main::-webkit-scrollbar-thumb {
+    background: #bbb;
+}
+ 
+.dg li:not(.folder) {
+    background: #fafafa;
+    border-bottom: 1px solid #ddd;
+}
+ 
+.dg li.save-row .button {
+    text-shadow: none !important;
+}
+
+.dg li.title {
+    background: #e8e8e8 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;
+}
+
+.dg .cr.function:hover,.dg .cr.boolean:hover {
+    background: #fff;
+}
+ 
+.dg .c input[type=text] {
+    background: #e9e9e9;
+}
+ 
+.dg .c input[type=text]:hover {
+    background: #eee;
+}
+ 
+.dg .c input[type=text]:focus {
+    background: #eee;
+    color: #555;
+}
+ 
+.dg .c .slider {
+    background: #e9e9e9;
+}
+
+.dg .c .slider:hover {
+    background: #eee;
+} */
+
+.dg.a { 
+    margin-right:267px !important; 
+    margin-top:77px !important;
+}
+
+body {
+    background: black;
+    user-select: none;
+  }
+  canvas {
+    cursor: pointer;
+    outline: 1px solid white;
+    outline-offset: 1px;
+  }
+  footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    color: white;
+    font: 10pt monospace;
+    text-align: right;
+    padding: 10pt;
+    margin: 5pt;
+    border: 1px solid white;
+    cursor: default;
+    z-index: 999;
+    background: rgba(0,0,0,0.75);
+  }
+  p span {
+    color: #FF0;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+/* #gui { position: absolute; top: 2px; left: 2px } */
