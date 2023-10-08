@@ -4,6 +4,7 @@ import { OrbitControls } from "https://unpkg.com/three@0.112/examples/jsm/contro
 
 import {GUI} from "https://cdn.jsdelivr.net/npm/three@0.127.0/examples/jsm/libs/dat.gui.module.js";
 
+
 //Renderer Elements
 var ctx = document.body.appendChild(document.createElement('canvas')).getContext('2d'),
   renderer = new THREE.WebGLRenderer({
@@ -13,7 +14,7 @@ var ctx = document.body.appendChild(document.createElement('canvas')).getContext
 
 const loader = new THREE.TextureLoader();
 
-console.log(ctx.height, ctx.width);
+// console.log(ctx.height, ctx.width);
 
 document.body.appendChild(renderer.domElement);
 renderer.domElement.style.position =
@@ -135,6 +136,17 @@ var planetColors = [
     10, 20, 22, 12, 60, 45, 30, 28
   ];
 
+  const planet_eccentricity = [
+    0.206,
+    0.007,
+    0.017,
+    0.093,
+    0.048,
+    0.056,
+    0.046,
+    0.010
+  ]
+
   const planet_orbit_radius = [
     38,72,100,152,520,953,1919,3006
   ]
@@ -175,7 +187,8 @@ for (var p = 0; p < 8; p++) {
     planet.orbit = Math.PI * 2;
     planet.position.set(planet.orbitRadius, 0, 0);
 
-    let pts = new THREE.Path().absarc(0, 0, planet.orbitRadius, 0, Math.PI * 2).getPoints(90);
+    // let pts = new THREE.Path().absarc(0, 0, planet.orbitRadius, 0, Math.PI * 2).getPoints(90);
+    let pts = new THREE.Path().absellipse(0, 0, planet.orbitRadius,planet.orbitRadius*(1+planet_eccentricity[p]), 0, Math.PI * 2).getPoints(90);
     let g = new THREE.BufferGeometry().setFromPoints(pts);
     g.rotateX(Math.PI * 0.5);   
     let m = new THREE.LineBasicMaterial( { color: 0xffff00, transparent: true, opacity: 0.75 } );
@@ -204,6 +217,15 @@ scene.add(light2);
 
 let clock = new THREE.Clock();
 
+function ExecPythonCommand(url){
+  var tempURL = 'get_result/'+url;
+  var request = new XMLHttpRequest()
+  request.open("GET", "/" + tempURL, true)
+  request.send()
+}
+
+const planet_orbit_radius_scale2 = 5;
+
 //Main Loop
 function animate() {
 //   stats.begin();
@@ -212,18 +234,41 @@ function animate() {
   ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
   ctx.fillStyle = 'rgba(255,255,255,0.25)';
 
-  missionDate.timeElapsed += missionDate.timeSpeed;
+  missionDate.timeElapsed += parseInt(missionDate.timeSpeed);
   dataObject.message = new Date(missionDate.timeElapsed).toString();
+
+  var valuesArray = "";
+  var valuesArrayChanged = false;
+
+  if(parseInt(missionDate.timeElapsed / 100000)%10==5) {
+      console.log("WOLAM "+missionDate.timeElapsed);
+      ExecPythonCommand(Math.floor(missionDate.timeElapsed));
+
+      fetch("Code/data.txt")
+        .then(async (data) => {
+          if (data.ok) {
+              data = await data.json()
+              valuesArray = data;
+          }
+              
+          })
+          .catch(e => console.log('Connection error', e))
+
+      var valuesArray = valuesArray.split(',');
+      var valuesArrayChanged = true;
+  }
 
   for (var p in planets) {
     var planet = planets[p];
     planet.rot = planet.rotSpeed*missionDate.timeElapsed;
     planet.rotation.set(0, planet.rot, 0);
     planet.orbit = planet.orbitSpeed*missionDate.timeElapsed;
-    planet.position.set(Math.cos(planet.orbit) * planet.orbitRadius, 0, Math.sin(planet.orbit) * planet.orbitRadius);
+    if(valuesArrayChanged) {
+      planet.position.set(valuesArray[p+0]*planet_orbit_radius_scale2, valuesArray[p+1]*planet_orbit_radius_scale2, valuesArray[p+2]*planet_orbit_radius_scale2);
+    }
   }
   
-  star.rotation.set(0, missionDate.timeElapsed*0.1, 0);
+  star.rotation.set(0, missionDate.timeElapsed*0.01, 0);
   
   renderer.render(scene, camera);
 

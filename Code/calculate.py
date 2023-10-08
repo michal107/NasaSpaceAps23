@@ -3,9 +3,7 @@ from datetime import datetime
 import time as tm
 # import matplotlib.pyplot as plt
 import math
-
-start = tm.time_ns()
-
+import csv
 
 class Orbit:
     def __init__(self, name, longtitude, latitude, dist):
@@ -38,6 +36,7 @@ distance_multipliers = {
 scaled_planets = {name: Orbit(name, orbit_obj.long, orbit_obj.lat, orbit_obj.dist * distance_multipliers.get(name, 1))
                   for name, orbit_obj in planets.items()}
 
+# print(type(planets))
 
 # for planet, scaled_orbit_obj in planets.items():
 #     print(scaled_orbit_obj)
@@ -56,6 +55,34 @@ def spherical_to_cartesian(distance, longtitude, latitude):
 
     return x, y, z
 
+
+def position(time2):
+    time = datetime.fromtimestamp(time2)
+    H = solarsystem.Heliocentric(year=time.year, month=time.month, day=time.day, hour=time.hour, minute=time.minute)
+    planets = {name: Orbit(name, *values) for name, values in H.planets().items()}
+    planets = list(planets.items())
+    results = ""
+
+    f = open('Code/data.txt', 'w')
+    for p in planets:
+        vstring = spherical_to_cartesian_str(p[1].dist, p[1].long, p[1].lat)
+        f.write(vstring)
+        results += vstring + ";"
+    f.close
+    return results
+
+def spherical_to_cartesian_str(distance, longtitude, latitude):
+    """
+    Convert spherical coordinates to cartesian.
+    """
+    long_rad = math.radians(longtitude)
+    lat_rad = math.radians(latitude)
+
+    x = distance * math.cos(lat_rad) * math.cos(long_rad)
+    y = distance * math.cos(lat_rad) * math.sin(long_rad)
+    z = distance * math.sin(lat_rad)
+
+    return str(str(round(x, 4))+","+str(round(y, 4))+","+str(round(z, 4)))
 
 def convert_dict(planets_dict, should_plot=False):
     """
@@ -89,6 +116,3 @@ def convert_dict(planets_dict, should_plot=False):
 
 
 cart_coords = convert_dict(scaled_planets)
-
-stop = tm.time_ns()
-print("{} sec.".format((stop-start)/1000000000))

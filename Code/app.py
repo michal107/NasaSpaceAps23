@@ -1,9 +1,11 @@
-from flask import Flask,request,render_template, redirect, url_for
+from flask import Flask,request,render_template, redirect, url_for, Blueprint
 import sqlalchemy_utils
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase
 from flask_migrate import Migrate
 import sqlite3
+import calculate
+import math
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.db'
@@ -97,6 +99,10 @@ tabs = [
     {"id": "tab2", "label": "Zakładka 2", "content": "To jest zawartość zakładki 2.", "image_url": "/static/image2.jpg"},
     {"id": "tab3", "label": "Zakładka 3", "content": "To jest zawartość zakładki 3.", "image_url": "/static/image3.jpg"},
 ]
+
+@app.route("/get_result/<url>", methods=['GET'])
+def get_result(url):
+    return calculate.position(int((int(url)/1000)))
 
 @app.route('/')
 def index():
