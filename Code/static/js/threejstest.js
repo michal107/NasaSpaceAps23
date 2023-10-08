@@ -13,6 +13,8 @@ var ctx = document.body.appendChild(document.createElement('canvas')).getContext
 
 const loader = new THREE.TextureLoader();
 
+console.log(ctx.height, ctx.width);
+
 document.body.appendChild(renderer.domElement);
 renderer.domElement.style.position =
 ctx.canvas.style.position = 'fixed';
@@ -27,7 +29,7 @@ function resize() {
     ctx.canvas.width = window.innerWidth;
     ctx.canvas.height = preHeight;
   } else {
-    var newWidth = Math.floor(window.innerWidth - (preHeight - window.innerHeight) * ratio);
+    var newWidth = Math.min(Math.floor(window.innerWidth - (preHeight - window.innerHeight) * ratio), 1000);
     newWidth -= newWidth % 2 !== 0 ? 1 : 0;
     renderer.setSize(newWidth, newWidth / ratio);
     ctx.canvas.width = newWidth;
