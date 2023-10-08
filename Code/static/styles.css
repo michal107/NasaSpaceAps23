@@ -106,6 +106,7 @@
   
   .topnav a {
     float: left;
+    align-items: right;
     color: white;
     text-align: center;
     padding: 14px 16px;

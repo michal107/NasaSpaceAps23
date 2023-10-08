@@ -32,9 +32,9 @@ def go_register():
 def go_forgot_pwd():
      return render_template('forgot_pwd.html')
 
-@app.route('/go_bestsellers')
-def go_bestsellers():
-     return render_template('bestsellers.html')
+@app.route('/go_transport')
+def go_transport():
+     return render_template('transport.html')
 
 @app.route('/go_recomend')
 def go_recomend():
@@ -63,6 +63,10 @@ def go_conditions():
 @app.route('/go_about')
 def go_about():
      return render_template('about.html')
+
+@app.route('/go_hotel')
+def go_hotel():
+     return render_template('hotel.html')
 
 @app.route('/go_mercury')
 def go_mercury():
