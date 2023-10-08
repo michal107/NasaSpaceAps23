@@ -5,6 +5,8 @@ from sqlalchemy.orm import DeclarativeBase
 from flask_migrate import Migrate
 import sqlite3
 
+loggedInUser = None
+
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATION'] = False
@@ -96,15 +98,9 @@ def go_uranus():
 def go_neptune():
      return render_template('planets/neptune.html')
 
-tabs = [
-    {"id": "tab1", "label": "Atractions", "content": "To jest zawartość zakładki 1.", "image_url": "/static/image1.jpg"},
-    {"id": "tab2", "label": "Zakładka 2", "content": "To jest zawartość zakładki 2.", "image_url": "/static/image2.jpg"},
-    {"id": "tab3", "label": "Zakładka 3", "content": "To jest zawartość zakładki 3.", "image_url": "/static/image3.jpg"},
-]
-
-@app.route('/')
-def index():
-    return render_template('tab_window.html', tabs=tabs)
+@app.route('/is_loged_in')
+def is_logged_in():
+     pass
 
 @app.route('/form_login',methods=['POST','GET'])
 def login():
