@@ -270,7 +270,7 @@ function animate() {
   if(parseInt(missionDate.timeElapsed / 10000)%3==1) {
       ExecPythonCommand(Math.floor(missionDate.timeElapsed));
 
-      const url = 'http://127.0.0.1:5000/read_data';
+      const url = 'http://162.19.246.227:5000/read_data';
 
       fetch(url)
         .then(response => {
