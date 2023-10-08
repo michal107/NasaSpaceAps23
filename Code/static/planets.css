@@ -172,6 +172,7 @@ table {
   margin: 0 auto;
   padding: 20px;
   border-radius: 5px;
+  font-size: small;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
