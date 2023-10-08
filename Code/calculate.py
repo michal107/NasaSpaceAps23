@@ -82,7 +82,7 @@ def spherical_to_cartesian_str(distance, longtitude, latitude):
     y = distance * math.cos(lat_rad) * math.sin(long_rad)
     z = distance * math.sin(lat_rad)
 
-    return str(str(round(x, 4))+","+str(round(y, 4))+","+str(round(z, 4)))
+    return str(str(round(x, 4))+","+str(round(y, 4))+","+str(round(z, 4))+",")
 
 def convert_dict(planets_dict, should_plot=False):
     """

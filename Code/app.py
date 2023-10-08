@@ -1,4 +1,4 @@
-from flask import Flask,request,render_template, redirect, url_for, Blueprint
+from flask import Flask,request,render_template, redirect, url_for, Response
 import sqlalchemy_utils
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase
@@ -107,6 +107,16 @@ def get_result(url):
 @app.route('/')
 def index():
     return render_template('tab_window.html', tabs=tabs)
+
+@app.route('/read_data')
+def read_text_file():
+    file_path = 'Code/data.txt'
+    try:
+        with open(file_path, 'r') as file:
+            file_contents = file.read()
+        return Response(file_contents, mimetype='text/plain')
+    except FileNotFoundError:
+        return "Plik nie znaleziony", 404
 
 @app.route('/form_login',methods=['POST','GET'])
 def login():

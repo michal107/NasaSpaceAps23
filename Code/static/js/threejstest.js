@@ -224,7 +224,9 @@ function ExecPythonCommand(url){
   request.send()
 }
 
-const planet_orbit_radius_scale2 = 5;
+const planet_orbit_radius_scale2 = 5.0;
+
+let numbers;
 
 //Main Loop
 function animate() {
@@ -237,25 +239,36 @@ function animate() {
   missionDate.timeElapsed += parseInt(missionDate.timeSpeed);
   dataObject.message = new Date(missionDate.timeElapsed).toString();
 
-  var valuesArray = "";
+  
   var valuesArrayChanged = false;
 
   if(parseInt(missionDate.timeElapsed / 100000)%10==5) {
-      console.log("WOLAM "+missionDate.timeElapsed);
       ExecPythonCommand(Math.floor(missionDate.timeElapsed));
 
-      fetch("Code/data.txt")
-        .then(async (data) => {
-          if (data.ok) {
-              data = await data.json()
-              valuesArray = data;
-          }
-              
-          })
-          .catch(e => console.log('Connection error', e))
+      const url = 'http://127.0.0.1:5000/read_data';
 
-      var valuesArray = valuesArray.split(',');
-      var valuesArrayChanged = true;
+      fetch(url)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`Błąd: Kod statusu ${response.status}`);
+          }
+          return response.text();
+        })
+        .then(data => {
+          var numbersStr = data.split(',');
+          numbers = numbersStr.map(Number);
+          for(var numberd in numbers) {
+            console.log(numbers[numberd]);
+          }
+          for (var p in planets) {
+            console.log("LOSOWANIE:"+numbers[(p+0)] + ":" + numbers[(p+1)] + ":" + numbers[(p+2)]);
+            console.log("P:"+p+" a numery to:"+(Number(numbers[p+0]*planet_orbit_radius_scale2)) );
+            planet.position.set(numbers[p+0]*planet_orbit_radius_scale2, numbers[p+1]*planet_orbit_radius_scale2, numbers[p+2]*planet_orbit_radius_scale2);
+          }
+        })
+        .catch(error => {
+          console.error(`Błąd: ${error.message}`);
+        });
   }
 
   for (var p in planets) {
@@ -263,9 +276,6 @@ function animate() {
     planet.rot = planet.rotSpeed*missionDate.timeElapsed;
     planet.rotation.set(0, planet.rot, 0);
     planet.orbit = planet.orbitSpeed*missionDate.timeElapsed;
-    if(valuesArrayChanged) {
-      planet.position.set(valuesArray[p+0]*planet_orbit_radius_scale2, valuesArray[p+1]*planet_orbit_radius_scale2, valuesArray[p+2]*planet_orbit_radius_scale2);
-    }
   }
   
   star.rotation.set(0, missionDate.timeElapsed*0.01, 0);
