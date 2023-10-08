@@ -91,6 +91,7 @@
     cursor: pointer;
   }
 
+/* Video for background */
   #myVideo {
     position: fixed;
     top: 0px;
@@ -99,7 +100,7 @@
     min-width: 100%;
     min-height: 100%;
   }
-
+/* Top navigation */
   .topnav {
     overflow: hidden;
   }
@@ -126,13 +127,12 @@
     color: black;
   }
 
-   /* Styl dla opcji rozwijanego menu */
+  /* Rozwijane Menu */
    .dropdown {
     float: left;
     overflow: hidden;
 }
 
-/* Styl dla przycisku rozwijającego menu */
 .dropdown .dropbtn {
     font-size: 16px;
     border: none;
@@ -144,7 +144,6 @@
     text-align: center;
 }
 
-/* Styl dla zawartości rozwijanego menu */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -153,7 +152,6 @@
     z-index: 1;
 }
 
-/* Styl dla opcji w rozwijanym menu */
 .dropdown-content a {
     float: none;
     color: white;
@@ -163,18 +161,17 @@
     text-align: left;
 }
 
-/* Zmiana koloru opcji w rozwijanym menu po najechaniu myszką */
 .dropdown-content a:hover {
     background-color: #ddd;
     color: black;
 }
 
-/* Wyświetlanie rozwijanego menu po najechaniu myszką */
 .dropdown:hover .dropdown-content {
     display: block;
     position: fixed;
     z-index: 9999;
 }
+/* col and row with content cd */
   .row {
     font-size: 1.5vw;
   }

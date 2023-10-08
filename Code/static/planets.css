@@ -88,6 +88,7 @@ a:hover {
   cursor: pointer;
 }
 
+/* Background Video */
 #myVideo {
   position: fixed;
   top: 0px;
@@ -97,6 +98,7 @@ a:hover {
   min-height: 100%;
 }
 
+/* Navigation bar */
 .topnav {
   overflow: hidden;
 }
@@ -120,13 +122,12 @@ a:hover {
   color: black;
 }
 
-   /* Styl dla opcji rozwijanego menu */
+/* Dropdown menu */
    .dropdown {
     float: left;
     overflow: hidden;
 }
 
-/* Styl dla przycisku rozwijającego menu */
 .dropdown .dropbtn {
     font-size: 16px;
     border: none;
@@ -138,7 +139,6 @@ a:hover {
     text-align: center;
 }
 
-/* Styl dla zawartości rozwijanego menu */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -147,7 +147,6 @@ a:hover {
     z-index: 1;
 }
 
-/* Styl dla opcji w rozwijanym menu */
 .dropdown-content a {
     float: none;
     color: white;
@@ -157,24 +156,23 @@ a:hover {
     text-align: left;
 }
 
-/* Zmiana koloru opcji w rozwijanym menu po najechaniu myszką */
 .dropdown-content a:hover {
     background-color: #ddd;
     color: black;
 }
 
-/* Wyświetlanie rozwijanego menu po najechaniu myszką */
 .dropdown:hover .dropdown-content {
     display: block;
     position: fixed;
     z-index: 9999;
 }
 
+/* rows and columns for content display */
 .row {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%; /* optional, depending on the layout you want */
+  width: 100%;
 }
 .row::after {
   content: "";
@@ -187,24 +185,15 @@ table {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%; /* optional, depending on the layout you want */
+  width: 100%;
 }
 
 .col {
   padding: 0.5vw;
   text-align: center;
 }
-/* .window {
-  width: 400px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  color: black;
-} */
 
+/* Modal window styles */
 .modal {
   display: none;
   position: fixed;
