@@ -80,22 +80,40 @@
 
     <div class="modal" id="modal4">
         <div class="modal-content">
-            <ul>
-              <li>FA day on Mars: 24.66h, a year on Mars lasts 779 Earth days</li>
-              <li>How many Earths can fit inside Mars: 0.151 Earths</li>
-              <li>How many Earth masses is one Mars mass: 0.107 Earths</li>
-              <li>Distance to the sun:  1.66 AU (1 AU = 149 597 871 km)</li>
-            </ul>
+          <ul>
+            <li>Average Martian surface temperature: varies from -110 to 35°C</li>
+            <li>Average atmospheric pressure: 0.638 kPa</li>
+          </ul>
             <button onclick="closeModal('modal4')">Close</button>
         </div>
     </div>
 
     <div class="modal" id="modal5">
         <div class="modal-content">
-            <ul>
-              <li>Average Martian surface temperature: varies from -110 to 35°C</li>
-              <li>Average atmospheric pressure: 0.638 kPa</li>
-            </ul>
+          <div class="slideshow-container">
+            <!-- Slajdy -->
+            <div class="mySlides">
+                <img src="../../static/planets/mars.jpg" style="width: 100%;">
+            </div>
+    
+            <div class="mySlides">
+              <img src="../../static/planets/mercury.jpg" style="width: 100%;">
+            </div>
+    
+            <div class="mySlides">
+              <img src="../../static/planets/saturn.jpg" style="width: 100%;">
+            </div>
+    
+            <!-- Przyciski nawigacyjne -->
+            <a class="prev" onclick="plusSlides(-1)">Poprzedni</a>
+            <a class="next" onclick="plusSlides(1)">Następny</a>
+            <!-- Punkty pod slajdami -->
+            <div class="dot-container">
+              <span class="dot" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
+          </div>
+      </div>
             <button onclick="closeModal('modal5')">Close</button>
         </div>
     </div>
@@ -114,6 +132,46 @@
       var modal = document.getElementById(modalId);
       modal.style.display = 'none';
   }
+
+  //Funkcje pokazu slajdów
+  let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Funkcja do przechodzenia do poprzedniego/następnego slajdu
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Funkcja do przejścia do konkretnego slajdu po kliknięciu na punkt
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    // Funkcja do wyświetlania slajdów
+    function showSlides(n) {
+        let i;
+        const slides = document.getElementsByClassName("mySlides");
+        const dots = document.getElementsByClassName("dot");
+
+        if (n > slides.length) {
+            slideIndex = 1;
+        }
+
+        if (n < 1) {
+            slideIndex = slides.length;
+        }
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
 </script>
 
 </body>
