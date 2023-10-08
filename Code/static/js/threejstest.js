@@ -86,8 +86,8 @@ let missionDate = {
 };
 
 var buttonPause = { Pause:function(){ missionDate.timeSpeed = 0 }};
-var buttonSpeed1 = { Speed1:function(){ missionDate.timeSpeed = 1 }};
-var buttonSpeed2 = { Speed2:function(){ missionDate.timeSpeed = 2 }};
+var buttonSpeed1 = { Speed1:function(){ missionDate.timeSpeed = 20 }};
+var buttonSpeed2 = { Speed2:function(){ missionDate.timeSpeed = 40 }};
 // var buttonSpeed3 = { Speed3:function(){ missionDate.timeSpeed = 4 }};
 // var buttonSpeed4 = { Speed4:function(){ missionDate.timeSpeed = 8 }};
 // var buttonSpeed5 = { Speed5:function(){ missionDate.timeSpeed = 16 }};
@@ -108,6 +108,8 @@ gui.add(buttonSpeed2,'Speed2');
 // gui.add(buttonSpeed3,'Speed3');
 // gui.add(buttonSpeed4,'Speed4');
 // gui.add(buttonSpeed5,'Speed5');
+
+const AU_TO_UNITS = 50; 
 
 var planetColors = [
     0x333333, //grey
@@ -146,6 +148,28 @@ var planetColors = [
     0.046,
     0.010
   ]
+
+  const OrbitInc = [
+    0.122,   // Mercury (in radians)
+    0.032,   // Venus (in radians)
+    0.032,   // Earth (in radians)
+    0.034,   // Mars (in radians)
+    0.049,   // Jupiter (in radians)
+    0.056,   // Saturn (in radians)
+    0.046,   // Uranus (in radians)
+    0.010    // Neptune (in radians)
+  ];
+
+  const apoapsisAngles = [
+    3.655,   // Mercury (in radians)
+    3.872,   // Venus (in radians)
+    4.705,   // Mars (in radians)
+    4.800,   // Jupiter (in radians)
+    5.578,   // Saturn (in radians)
+    5.085,   // Uranus (in radians)
+    4.855    // Neptune (in radians)
+  ];
+  
 
   const planet_orbit_radius = [
     38,72,100,152,520,953,1919,3006
@@ -188,12 +212,13 @@ for (var p = 0; p < 8; p++) {
     planet.position.set(planet.orbitRadius, 0, 0);
 
     // let pts = new THREE.Path().absarc(0, 0, planet.orbitRadius, 0, Math.PI * 2).getPoints(90);
-    let pts = new THREE.Path().absellipse(0, 0, planet.orbitRadius,planet.orbitRadius*(1+planet_eccentricity[p]), 0, Math.PI * 2).getPoints(90);
+    let pts = new THREE.Path().absellipse(0, 0, planet.orbitRadius,planet.orbitRadius*(1+planet_eccentricity[p]), 0, Math.PI * 2).getPoints(180);
     let g = new THREE.BufferGeometry().setFromPoints(pts);
     g.rotateX(Math.PI * 0.5);   
     let m = new THREE.LineBasicMaterial( { color: 0xffff00, transparent: true, opacity: 0.75 } );
     let orbit = new THREE.Line(g, m);
-    orbit.rotation.x = planet.orbit;
+    orbit.rotation.x = OrbitInc[p];
+    orbit.rotation.y = apoapsisAngles[p]+4;
 
     let pg = new THREE.SphereGeometry(20, 5, 2);
     let pm = new THREE.MeshLambertMaterial({color: "aqua"});
@@ -201,7 +226,7 @@ for (var p = 0; p < 8; p++) {
     pl.rotation.order = "ZYX";
 
     orbit.add(pl);
-    scene.add(orbit);
+    // scene.add(orbit);
     planets.push(planet);
     scene.add(planet);
 }
@@ -224,7 +249,7 @@ function ExecPythonCommand(url){
   request.send()
 }
 
-const planet_orbit_radius_scale2 = 5.0;
+const planet_orbit_radius_scale2 = 100;
 
 let numbers;
 
@@ -242,7 +267,7 @@ function animate() {
   
   var valuesArrayChanged = false;
 
-  if(parseInt(missionDate.timeElapsed / 100000)%10==5) {
+  if(parseInt(missionDate.timeElapsed / 10000)%3==1) {
       ExecPythonCommand(Math.floor(missionDate.timeElapsed));
 
       const url = 'http://127.0.0.1:5000/read_data';
@@ -256,14 +281,13 @@ function animate() {
         })
         .then(data => {
           var numbersStr = data.split(',');
-          numbers = numbersStr.map(Number);
-          for(var numberd in numbers) {
-            console.log(numbers[numberd]);
+          numbers = Array.from(numbersStr.map(Number));
+          for (let i = 0; i < numbers.length; i++) {
+              console.log(numbers[i]);
           }
           for (var p in planets) {
-            console.log("LOSOWANIE:"+numbers[(p+0)] + ":" + numbers[(p+1)] + ":" + numbers[(p+2)]);
-            console.log("P:"+p+" a numery to:"+(Number(numbers[p+0]*planet_orbit_radius_scale2)) );
-            planet.position.set(numbers[p+0]*planet_orbit_radius_scale2, numbers[p+1]*planet_orbit_radius_scale2, numbers[p+2]*planet_orbit_radius_scale2);
+            var planet = planets[p];
+            planet.position.set(Math.floor(numbers[(p*3)+1]*planet_orbit_radius_scale2),Math.floor(numbers[(p*3)+2]*planet_orbit_radius_scale2),Math.floor( numbers[(p*3)+0]*planet_orbit_radius_scale2));
           }
         })
         .catch(error => {
