@@ -1,6 +1,6 @@
 # NasaSpaceAps23
 
-Source code of web application written by Zofia Stypułkowska, Michał Ślimak and Jakub Oprychał in collaboration with Anna Sobala and Michał Wnuk.
+Source code of web application written by Zofia Stypułkowska, Michał Ślimak and Jakub Opyrchał in collaboration with Anna Sobala and Michał Wnuk.
 
 The website is an offer of interplanetary travel agency focusing on creating a tool that will not only develop customized itineraries for future travellers who want to visit the main bodies in our solar system—perhaps Mars, Jupiter, or Saturn—but also educate present-day users about the many different objects in our solar system. 
 
